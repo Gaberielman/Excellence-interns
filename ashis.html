@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashis Kumar | Back End Developer Intern</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#050505',
+                        card: '#0a0a0a',
+                        accent: '#38bdf8',
+                        purple_glow: '#a855f7',
+                    },
+                    borderRadius: { '4xl': '2rem' }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-dark text-slate-200 font-['Plus_Jakarta_Sans'] selection:bg-accent/30 overflow-x-hidden">
+
+    <header class="fixed top-0 w-full z-50 backdrop-blur-md border-b border-white/5">
+        <nav class="max-w-7xl mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
+            <div class="text-white font-bold text-lg md:text-xl flex items-center gap-2">
+                <span class="text-accent">{ }</span> Ashis.Backend
+            </div>
+            <div class="hidden lg:flex gap-8 text-sm font-medium text-slate-400">
+                <a href="#" class="hover:text-white transition-colors">Home</a>
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+            </div>
+            <a href="#contact"
+                class="bg-gradient-to-r from-purple-600 to-accent px-4 md:px-6 py-2 rounded-lg text-white font-bold text-xs md:text-sm hover:scale-105 transition-transform">
+                Hire Me
+            </a>
+        </nav>
+    </header>
+
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div
+            class="absolute inset-0 opacity-20 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/circuit-board.png')]">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10 py-12">
+            <div class="space-y-6 md:space-y-8 text-center lg:text-left">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight text-white">
+                    Architecting <span class="text-purple_glow">Robust</span><br>
+                    <span class="text-accent">Systems</span>
+                </h1>
+                <p class="text-slate-400 text-base md:text-lg max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                    Back End Developer Intern specializing in building scalable server-side logic, managing complex
+                    databases, and creating seamless API integrations.
+                </p>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                    <a href="#projects"
+                        class="inline-block text-center w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-purple-600 to-accent rounded-xl font-bold text-white shadow-lg">
+                        View Repositories
+                    </a>
+                    <a href="#contact"
+                        class="inline-block text-center w-full sm:w-auto px-8 py-4 border border-white/10 bg-white/5 rounded-xl font-bold hover:bg-white/10 transition-all">
+                        Let's Talk Tech
+                    </a>
+                </div>
+                <div class="flex justify-center lg:justify-start items-center gap-2 text-xs md:text-sm text-slate-500">
+                    <i class="fas fa-server text-accent"></i>
+                    <span>Reliable. Scalable. Secure.</span>
+                </div>
+            </div>
+
+            <div class="relative flex justify-center scale-75 md:scale-100">
+                <div
+                    class="absolute w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-accent/10 blur-[80px] md:blur-[120px] rounded-full">
+                </div>
+                <div class="relative w-72 h-72 md:w-[450px] md:h-[450px] flex items-center justify-center">
+                    <svg class="absolute w-full h-full animate-[spin_20s_linear_infinite]" viewBox="0 0 100 100">
+                        <defs>
+                            <path id="heroCircle" d="M 50, 50 m -38, 0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0"></path>
+                        </defs>
+                        <text class="fill-slate-500 text-[4.5px] uppercase tracking-[0.4em] font-bold">
+                            <textPath xlink:href="#heroCircle">NODE.JS • MONGODB • EXPRESS • API • POSTGRESQL • BACKEND
+                                •</textPath>
+                        </text>
+                    </svg>
+                    <div
+                        class="w-56 h-56 md:w-80 md:h-80 rounded-full border-[6px] md:border-[10px] border-white/5 p-4 bg-dark z-20 overflow-hidden">
+                        <img src="./assets/img/Ashish.jpeg" alt="Ashis Kumar"
+                            class="w-full h-full object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-500">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-12 md:py-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+            class="bg-card border border-white/10 rounded-3xl p-8 md:p-10 flex flex-col justify-center items-center lg:items-start gap-4">
+            <i class="fas fa-database text-accent text-3xl md:text-4xl"></i>
+            <div class="text-center lg:text-left">
+                <h3 class="text-4xl md:text-5xl font-bold text-white">DB</h3>
+                <p class="text-slate-500 uppercase tracking-widest text-xs font-bold mt-2">Optimization</p>
+            </div>
+        </div>
+        <div
+            class="bg-card border border-white/10 rounded-3xl p-8 md:p-10 flex flex-col justify-center items-center lg:items-start gap-4">
+            <i class="fas fa-project-diagram text-purple_glow text-3xl md:text-4xl"></i>
+            <div class="text-center lg:text-left">
+                <h3 class="text-4xl md:text-5xl font-bold text-white">REST</h3>
+                <p class="text-slate-500 uppercase tracking-widest text-xs font-bold mt-2">API Architecture</p>
+            </div>
+        </div>
+        <div
+            class="sm:col-span-2 lg:col-span-1 bg-card border border-white/10 rounded-3xl p-8 font-mono text-xs md:text-sm leading-relaxed relative overflow-hidden">
+            <p class="text-purple-400">const <span class="text-white">ashisKumar</span> = {</p>
+            <p class="pl-4 text-slate-400">focus: <span class="text-yellow-200">"Server Side"</span>,</p>
+            <p class="pl-4 text-slate-400">tech: [<span class="text-accent">"Node", "Express", "NoSQL"</span>],</p>
+            <p class="pl-4 text-slate-400">status: <span class="text-yellow-200">"Learning Systems"</span></p>
+            <p class="text-purple-400">}</p>
+        </div>
+    </section>
+
+    <section id="about" class="max-w-7xl mx-auto px-6 py-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-6">
+                <h2 class="text-4xl font-bold text-white">Logic Behind the <span class="text-purple_glow">Screen</span>
+                </h2>
+                <p class="text-slate-400 leading-relaxed text-lg">
+                    I am Ashis Kumar, a Backend Intern who loves solving complex logical puzzles. I focus on the "how"
+                    and "where" of data storage and processing, ensuring that applications remain fast and reliable
+                    under heavy load.
+                </p>
+                <div class="mt-8 p-6 bg-white/5 border border-white/10 rounded-2xl">
+                    <p class="text-xs font-bold text-accent uppercase tracking-widest mb-4">Architecture Insight</p>
+
+                </div>
+            </div>
+            <div class="relative group">
+                <div
+                    class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-accent rounded-3xl blur opacity-20 transition duration-1000">
+                </div>
+                <img src="./assets/img/Ashish.jpeg"
+                    class="relative rounded-3xl border border-white/10 grayscale hover:grayscale-0 transition-all duration-500"
+                    alt="Ashis Working">
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="max-w-7xl mx-auto px-6 py-20">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold text-white">Technical <span class="text-accent">Expertise</span>
+            </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-card border border-white/10 p-8 rounded-3xl hover:border-accent/40 transition-all">
+                <div
+                    class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent text-2xl mb-6">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <h3 class="text-white font-bold text-xl mb-4">API Development</h3>
+                <p class="text-slate-400 text-sm">Designing and implementing RESTful APIs with focus on authentication
+                    and rate limiting.</p>
+            </div>
+            <div class="bg-card border border-white/10 p-8 rounded-3xl hover:border-purple_glow/40 transition-all">
+                <div
+                    class="w-12 h-12 bg-purple_glow/10 rounded-xl flex items-center justify-center text-purple_glow text-2xl mb-6">
+                    <i class="fas fa-shield-halved"></i>
+                </div>
+                <h3 class="text-white font-bold text-xl mb-4">Server Security</h3>
+                <p class="text-slate-400 text-sm">Implementing JWT, CORS, and data encryption to keep user information
+                    safe.</p>
+            </div>
+            <div class="bg-card border border-white/10 p-8 rounded-3xl hover:border-accent/40 transition-all">
+                <div
+                    class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent text-2xl mb-6">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <h3 class="text-white font-bold text-xl mb-4">Database Design</h3>
+                <p class="text-slate-400 text-sm">Structuring SQL and NoSQL databases for high performance and data
+                    integrity.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-bold text-white text-center mb-12">
+                Featured <span class="text-purple_glow">Engineering</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div
+                    class="bg-card border border-white/10 rounded-2xl overflow-hidden group hover:border-accent/40 transition-all">
+                    <div class="h-48 bg-white/5 relative overflow-hidden">
+                        <img src="assets/img/image 1.png.png" alt="Intern Management System"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+                        <div class="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="font-bold text-white text-xl">Intern Management System</h3>
+                            <span
+                                class="text-[10px] border border-white/20 px-2 py-1 rounded text-slate-400 font-bold uppercase">Full
+                                Stack</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-6">A centralized platform designed to track intern progress,
+                            manage tasks, and streamline organizational workflows with a robust backend.</p>
+                        <div class="flex justify-between items-center pt-4 border-t border-white/5 text-sm font-bold">
+                            <a href="https://intern-managment.vercel.app/interns" target="_blank"
+                                class="text-white hover:text-accent transition-colors">
+                                Access Project <i class="fas fa-external-link-alt ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-card border border-white/10 rounded-2xl overflow-hidden group hover:border-accent/40 transition-all">
+                    <div class="h-48 bg-white/5 relative overflow-hidden">
+                        <img src="assets/img/image 2.png.png" alt="Certificate Issuance System"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+                        <div class="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="font-bold text-white text-xl">Certificate Issuance System</h3>
+                            <span
+                                class="text-[10px] border border-white/20 px-2 py-1 rounded text-slate-400 font-bold uppercase">Backend
+                                Engine</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-6">Automated engine for generating and verifying digital
+                            certificates, featuring secure data handling and unique identifier generation.</p>
+                        <div class="flex justify-between items-center pt-4 border-t border-white/5 text-sm font-bold">
+                            <a href="https://certificate-issued-frontend.vercel.app/certificates" target="_blank"
+                                class="text-white hover:text-accent transition-colors">
+                                Access Project <i class="fas fa-external-link-alt ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="max-w-7xl mx-auto px-6 py-20 text-center">
+        <div class="bg-card border border-white/10 rounded-4xl p-12 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent">
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Let's Talk <span
+                    class="text-accent">Systems</span></h2>
+            <p class="text-slate-400 mb-10 max-w-xl mx-auto">Looking for a Backend Intern who can handle the heavy
+                lifting? Let's connect and build something powerful.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-6">
+                <a href="mailto:ashis.kumar@example.com"
+                    class="px-10 py-4 bg-white text-black font-bold rounded-xl hover:bg-accent hover:text-white transition-all">
+                    Email Me
+                </a>
+                <div class="flex items-center justify-center gap-6 text-2xl text-slate-500">
+                    <a href="#" class="hover:text-accent transition-colors"><i class="fab fa-github"></i></a>
+                    <a href="#" class="hover:text-accent transition-colors"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/5 text-center">
+        <p class="text-slate-500 text-sm">&copy; 2026 - Ashis Kumar. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>

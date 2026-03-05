@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Excellence Web Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #050505; font-family: 'Plus Jakarta Sans', sans-serif; color: #cbd5e1; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body class="p-6 md:p-12">
+    <div class="max-w-2xl mx-auto">
+        <div id="login-section" class="bg-zinc-900/50 border border-white/10 p-8 rounded-3xl backdrop-blur-md">
+            <h2 class="text-3xl font-bold text-white mb-6">Intern Login</h2>
+            <form id="login-form" class="space-y-4">
+                <input type="email" id="email" placeholder="Email" class="w-full bg-black/50 border border-white/10 p-4 rounded-xl focus:border-sky-400 outline-none transition-all" required>
+                <input type="password" id="password" placeholder="Password" class="w-full bg-black/50 border border-white/10 p-4 rounded-xl focus:border-sky-400 outline-none transition-all" required>
+                <button type="submit" class="w-full bg-sky-500 hover:bg-sky-400 text-white font-bold py-4 rounded-xl transition-all">Enter Dashboard</button>
+            </form>
+        </div>
+
+        <div id="dashboard-section" class="hidden space-y-8">
+            <div class="flex justify-between items-center">
+                <h2 class="text-3xl font-bold text-white">Post New Project</h2>
+                <button id="logout-btn" class="text-sm text-slate-500 hover:text-red-400">Sign Out</button>
+            </div>
+            
+            <form id="project-form" class="bg-zinc-900/50 border border-white/10 p-8 rounded-3xl space-y-4">
+                <input type="text" id="title" placeholder="Project Title" class="w-full bg-black/50 border border-white/10 p-4 rounded-xl outline-none" required>
+                <textarea id="description" placeholder="Short Project Description" class="w-full bg-black/50 border border-white/10 p-4 rounded-xl outline-none h-32" required></textarea>
+                <input type="text" id="icon" placeholder="FontAwesome Icon (e.g., fa-code)" class="w-full bg-black/50 border border-white/10 p-4 rounded-xl outline-none">
+                <input type="text" id="link" placeholder="Project Link (URL)" class="w-full bg-black/50 border border-white/10 p-4 rounded-xl outline-none">
+                <input type="text" id="tags" placeholder="Tags (comma separated: React, Firebase, Tailwind)" class="w-full bg-black/50 border border-white/10 p-4 rounded-xl outline-none">
+                <button type="submit" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-bold py-4 rounded-xl transition-all">Publish to Main Site</button>
+            </form>
+        </div>
+    </div>
+    <script type="module" src="./js/admin.js"></script>
+</body>
+</html>
