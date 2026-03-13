@@ -11,17 +11,18 @@
     <link rel="stylesheet" href="./css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Excellence Web Services | Project Showcase</title>
+    <title>Excellence Internship Portfolio | Project Showcase</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        dark: '#050505',
-                        card: '#0a0a0a',
-                        accent: '#38bdf8',
-                        purple_glow: '#a855f7',
+                        dark: '#ffffff',
+                        card: '#f9fafb',
+                        accent: '#FFD700',       // Gold Branding
+                        accent_light: '#f7e387', // Lighter Gold
+                        text_dark: '#0f172a',
                     },
                     borderRadius: { '4xl': '2rem' }
                 }
@@ -31,7 +32,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body class="bg-dark text-slate-200 font-['Plus_Jakarta_Sans']">
@@ -45,10 +46,18 @@
         </div>
     </nav>
 
-    <header class="py-16 text-center">
-        <h2 class="text-5xl font-bold text-white mb-4">Our Digital Creations</h2>
-        <p class="text-slate-400 max-w-xl mx-auto">Exploring the intersection of code and creativity through the lens of
-            our intern team.</p>
+    <header class="fixed top-0 w-full z-50 backdrop-blur-md border-b border-slate-100 bg-white/80">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <span class="text-slate-900 font-bold text-xl">Excellence Web Services</span>
+            </div>
+
+            <div class="flex items-center gap-8 text-sm font-bold text-slate-700">
+                <a href="index.html" class="hover:text-[#FFD700] transition-colors">Home</a>
+                <a href="index.html#intern-showcase" class="hover:text-[#FFD700] transition-colors">Our Interns</a>
+                <a href="gallery.html" class="text-[#FFD700]">Gallery</a>
+            </div>
+        </nav>
     </header>
 
     <section class="py-20 px-6">
@@ -67,16 +76,16 @@
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-center mb-3">
-                            <h3 class="font-bold text-white text-xl">Certificate Issuance System</h3>
+                            <h3 class="font-bold text-black text-xl">Certificate Issuance System</h3>
                             <span
-                                class="text-[10px] border border-white/20 px-2 py-1 rounded text-slate-400 font-bold uppercase">Backend
+                                class="text-[10px] border border-gold/20 px-2 py-1 rounded text-slate-400 font-bold uppercase">Backend
                                 Engine</span>
                         </div>
                         <p class="text-slate-400 text-sm mb-6">Automated engine for generating and verifying digital
                             certificates, featuring secure data handling and unique identifier generation.</p>
                         <div class="flex justify-between items-center pt-4 border-t border-white/5 text-sm font-bold">
                             <a href="https://certificate-issued-frontend.vercel.app/certificates" target="_blank"
-                                class="text-white hover:text-accent transition-colors">
+                                class="text-black hover:text-accent transition-colors">
                                 Access Project <i class="fas fa-external-link-alt ml-1"></i>
                             </a>
                         </div>
@@ -92,7 +101,7 @@
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-center mb-3">
-                            <h3 class="font-bold text-white text-xl">Intern Management System</h3>
+                            <h3 class="font-bold text-black text-xl">Intern Management System</h3>
                             <span
                                 class="text-[10px] border border-white/20 px-2 py-1 rounded text-slate-400 font-bold uppercase">Full
                                 Stack</span>
@@ -101,7 +110,7 @@
                             manage tasks, and streamline organizational workflows with a robust backend.</p>
                         <div class="flex justify-between items-center pt-4 border-t border-white/5 text-sm font-bold">
                             <a href="https://intern-managment.vercel.app/interns" target="_blank"
-                                class="text-white hover:text-accent transition-colors">
+                                class="text-black hover:text-accent transition-colors">
                                 Access Project <i class="fas fa-external-link-alt ml-1"></i>
                             </a>
                         </div>
@@ -115,16 +124,16 @@
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-center mb-3">
-                            <h3 class="font-bold text-white text-xl">AKG Biofuels Website</h3>
+                            <h3 class="font-bold text-black text-xl">AKG Biofuels Website</h3>
                             <span
                                 class="text-[10px] border border-white/20 px-2 py-1 rounded text-slate-400">Public</span>
                         </div>
                         <p class="text-slate-400 text-sm mb-6">Delivers Sustainable bio fuels powerning industries
                             resposibly.</p>
                         <div class="flex justify-between items-center pt-4 border-t border-white/5 text-sm font-bold">
-                            <a href="https://agk-biofuels-web.vercel.app/" class="text-white hover:text-accent">Live
+                            <a href="https://agk-biofuels-web.vercel.app/" class="text-black hover:text-accent">Live
                                 Demo</a>
-                            <a href="#" class="text-white hover:text-accent">Repository</a>
+                            <a href="#" class="text-black hover:text-accent">Repository</a>
                         </div>
                     </div>
                 </div>
@@ -138,7 +147,7 @@
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-center mb-3">
-                            <h3 class="font-bold text-white text-xl">Market Insight Report</h3>
+                            <h3 class="font-bold text-black text-xl">Market Insight Report</h3>
                             <span
                                 class="text-[10px] border border-white/20 px-2 py-1 rounded text-slate-400">Analysis</span>
                         </div>
@@ -146,7 +155,7 @@
                             emerging market trends and consumer behavior patterns.</p>
                         <div class="flex justify-between items-center pt-4 border-t border-white/5 text-sm font-bold">
                             <a href="https://gemini.google.com/share/c80473852d98" target="_blank"
-                                class="text-white hover:text-accent">Access Project <i
+                                class="text-black hover:text-accent">Access Project <i
                                     class="fas fa-external-link-alt ml-1"></i></a>
                         </div>
                     </div>
@@ -161,14 +170,14 @@
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-center mb-3">
-                            <h3 class="font-bold text-white text-xl">Data Engineering Pipeline</h3>
+                            <h3 class="font-bold text-black text-xl">Data Engineering Pipeline</h3>
                             <span class="text-[10px] border border-white/20 px-2 py-1 rounded text-slate-400">ETL</span>
                         </div>
                         <p class="text-slate-400 text-sm mb-6">Automated data cleaning and transformation scripts to
                             ensure high-quality datasets for downstream reporting.</p>
                         <div class="flex justify-between items-center pt-4 border-t border-white/5 text-sm font-bold">
                             <a href="https://gemini.google.com/share/5bb15b506b03" target="_blank"
-                                class="text-white hover:text-accent">Access Project <i
+                                class="text-black hover:text-accent">Access Project <i
                                     class="fas fa-external-link-alt ml-1"></i></a>
                         </div>
                     </div>
@@ -183,7 +192,7 @@
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-center mb-3">
-                            <h3 class="font-bold text-white text-xl">Operational Dashboard</h3>
+                            <h3 class="font-bold text-black text-xl">Operational Dashboard</h3>
                             <span
                                 class="text-[10px] border border-white/20 px-2 py-1 rounded text-slate-400">Visualization</span>
                         </div>
@@ -191,7 +200,7 @@
                             real-time visibility into key performance indicators.</p>
                         <div class="flex justify-between items-center pt-4 border-t border-white/5 text-sm font-bold">
                             <a href="https://gemini.google.com/share/2c8473e4b3a6" target="_blank"
-                                class="text-white hover:text-accent">Access Project <i
+                                class="text-black hover:text-accent">Access Project <i
                                     class="fas fa-external-link-alt ml-1"></i></a>
                         </div>
                     </div>
@@ -212,8 +221,8 @@
                         <p class="text-slate-400 text-sm mb-6">Showcasing your skills and expertise.</p>
                         <div class="flex justify-between items-center pt-4 border-t border-white/5 text-sm font-bold">
                             <a href="https://atul-ranjith-portfolio.vercel.app/"
-                                class="text-white hover:text-accent">Live Demo</a>
-                            <a href="#" class="text-white hover:text-accent">Repository</a>
+                                class="text-black hover:text-accent">Live Demo</a>
+                            <a href="#" class="text-black hover:text-accent">Repository</a>
                         </div>
                     </div>
                 </div>
@@ -237,7 +246,7 @@
                         class="relative w-full h-full rounded-full object-cover grayscale group-hover:grayscale-0 transition-all"
                         alt="Gabriel Manhanga">
                 </div>
-                <h4 class="text-white font-bold group-hover:text-accent">Gabriel Manhanga</h4>
+                <h4 class="text-black font-bold group-hover:text-accent">Gabriel Manhanga</h4>
                 <p class="text-slate-500 text-xs">Full Stack Intern</p>
             </a>
 
@@ -300,7 +309,7 @@
                     </div>
                     <img src="./assets/img/Anurag.jpg"
                         class="relative w-full h-full rounded-full object-cover grayscale group-hover:grayscale-0 transition-all"
-                        alt="Karen Mwasha">
+                        alt="Anurag Miska">
                 </div>
                 <h4 class="text-white font-bold group-hover:text-accent">Anurag </h4>
                 <p class="text-slate-500 text-xs">Front end Developer</p>

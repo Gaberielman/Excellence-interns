@@ -4,17 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Excellence Web Services | Project Showcase</title>
+    <title>Excellence Internship Portfolio | Project Showcase</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        dark: '#050505',
-                        card: '#0a0a0a',
-                        accent: '#38bdf8',
-                        purple_glow: '#a855f7',
+                        dark: '#ffffff',
+                        card: '#f9fafb',
+                        accent: '#FFD700',      // Excellence Gold from Logo
+                        accent_light: '#4ade80',
+                        text_dark: '#0f172a',
                     },
                     borderRadius: { '4xl': '2rem' }
                 }
@@ -24,202 +25,259 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
-<body class="bg-dark text-slate-200 font-['Plus_Jakarta_Sans'] selection:bg-accent/30 overflow-x-hidden">
-    <div id="custom-cursor"
-        class="fixed w-8 h-8 border border-accent rounded-full pointer-events-none z-[9999] transition-transform duration-100 -translate-x-1/2 -translate-y-1/2 hidden lg:block">
-    </div>
-    <div id="cursor-dot"
-        class="fixed w-1 h-1 bg-accent rounded-full pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 hidden lg:block">
-    </div>
-
-    <header class="fixed top-0 w-full z-50 backdrop-blur-md border-b border-white/5">
+<body class="bg-white text-slate-800 font-['Plus_Jakarta_Sans'] selection:bg-accent/30 overflow-x-hidden">
+    <header class="fixed top-0 w-full z-50 backdrop-blur-md border-b border-slate-100">
         <nav class="max-w-7xl mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
-            <div class="text-white font-bold text-lg md:text-xl flex items-center gap-2">
+            <div class="flex items-center gap-2">
+                <img src="assets/img/WhatsApp Image 2026-02-04 at 12.48.04 PM.jpeg" alt="Logo"
+                    class="h-10 w-10 object-contain">
+            </div>
+
+            <div class="text-slate-900 font-bold text-lg md:text-xl flex items-center gap-2">
                 <span class="text-accent">{ }</span> Excellence Web Services
             </div>
-            <div class="hidden lg:flex gap-8 text-sm font-medium text-slate-400">
-                <a href="#" class="hover:text-white transition-colors">Home</a>
+            <div class="hidden lg:flex gap-8 text-sm font-medium text-slate-600">
+                <a href="#" class="hover:text-accent transition-colors">Home</a>
                 <a href="https://www.excellencegroupofinstitutes.com/web-services" target="_blank"
-                    class="hover:text-white transition-colors">About Company</a>
-                <a href="#company-portfolio" class="hover:text-white transition-colors">Portfolio</a>
-                <a href="#intern-showcase" class="hover:text-white transition-colors">Our Interns</a>
+                    class="hover:text-accent transition-colors">About Company</a>
+                <a href="#intern-showcase" class="hover:text-accent transition-colors">Our Interns</a>
             </div>
             <div class="flex items-center gap-4">
-                <a href="https://www.instagram.com/excellence_web_services/" target="_blank"
-                    class="text-slate-400 hover:text-accent transition-colors text-xl">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#contact"
-                    class="bg-gradient-to-r from-purple-600 to-accent px-6 py-2 rounded-lg text-white font-bold text-sm hover:scale-105 transition-transform">
-                    Work With Us
+                <a href="gallery.html"
+                    class="bg-accent px-6 py-2 rounded-lg text-white font-bold text-sm hover:bg-accent_light transition-all">
+                    Our Projects
                 </a>
             </div>
         </nav>
     </header>
 
     <section class="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
-        <div
-            class="absolute inset-0 opacity-20 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/circuit-board.png')]">
-        </div>
         <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
-            <h1 class="text-6xl md:text-8xl font-bold leading-tight text-white mb-6">
-                Excellence <span class="text-purple_glow">Web</span><br>
-                <span class="text-accent">Innovations</span>
+            <div
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-bold mb-6">
+                <span class="relative flex h-2 w-2">
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                </span>
+                Now Accepting International Interns
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-bold leading-tight text-slate-900 mb-6">
+                Bridge the Gap Between <br>
+                <span class="text-accent">Theory & Industry</span>
             </h1>
-            <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-10">
-                Pioneering elite web solutions under the <a
-                    href="https://www.excellencegroupofinstitutes.com/web-services"
-                    class="text-accent hover:underline">Excellence Group</a>. Discover the rising talent driving our
-                next generation of digital brilliance.
+            <p class="text-slate-600 text-lg md:text-xl max-w-3xl mx-auto mb-10">
+                At Excellence Web Services, we don't just offer internships; we provide a launchpad for your career.
+                Join a global community of developers, marketers, and analysts where your code shapes real-world digital
+                solutions.
             </p>
-            <div class="flex justify-center gap-4">
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#intern-showcase"
-                    class="px-8 py-4 bg-white text-black font-bold rounded-xl hover:bg-accent hover:text-white transition-all">
-                    Meet Our Interns
+                    class="px-8 py-4 bg-accent text-white font-bold rounded-xl hover:bg-accent_light transition-all shadow-lg shadow-green-200">
+                    Explore Our Intern Success
                 </a>
-                <a href="https://www.excellencegroupofinstitutes.com/web-services" target="_blank"
-                    class="px-8 py-4 border border-white/20 text-white font-bold rounded-xl hover:bg-white/10 transition-all">
-                    Visit Company Site
+                <a href="https://wa.me/918557081922"
+                    class="px-8 py-4 bg-white text-slate-900 font-bold rounded-xl border border-slate-200 hover:border-accent transition-all">
+                    Register Now
                 </a>
             </div>
         </div>
     </section>
 
-    <section id="intern-showcase" class="py-24 bg-card/50 relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-accent/5 blur-[120px] -z-10"></div>
+    <section class="py-20 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col lg:flex-row items-center gap-12 mb-20">
-                <div class="lg:w-3/5">
-                    <h2 class="text-accent font-bold tracking-widest uppercase text-sm mb-4">Our Collaborative Force
-                    </h2>
-                    <h3 class="text-4xl md:text-5xl font-bold text-white mb-6">Built with Excellence, Led by Vision</h3>
-                    <div class="space-y-4 text-slate-400 text-lg leading-relaxed">
-                        <p>
-                            At Excellence Web Services, our intern team represents the pinnacle of emerging technical
-                            talent. Under the strategic mentorship of our <strong>Director, Sir Suryansh</strong>, this
-                            cohort has transitioned from individual contributors to a unified development powerhouse.
-                        </p>
-                        <p>
-                            By combining specialized skills in Backend Architecture, UI/UX Design, and Full-Stack
-                            Engineering, the team delivers high-performance solutions that meet the rigorous standards
-                            of the <a href="https://www.excellencegroupofinstitutes.com/web-services"
-                                class="text-accent hover:underline">Excellence Group of Institutes</a>.
-                        </p>
-                    </div>
-                </div>
+            <div class="bg-card border border-slate-200 rounded-4xl p-8 md:p-16 relative overflow-hidden shadow-sm">
+                <div class="absolute -top-24 -right-24 w-64 h-64 bg-accent/10 rounded-full blur-3xl"></div>
 
-                <div class="lg:w-2/5 relative group">
-                    <div
-                        class="absolute -inset-1 bg-gradient-to-r from-purple_glow to-accent rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000">
-                    </div>
-                    <div class="relative bg-dark rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                        <img src="./assets/img/IMG_4582.jpg" alt="Intern Team with Director Sir Suryanch"
-                            class="w-full h-auto object-cover transform transition duration-500 group-hover:scale-105">
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark to-transparent p-6">
-                            <p class="text-white font-bold text-sm">The Excellence Team & Director Sir Suryansh</p>
+                <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div
+                            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-bold mb-6">
+                            <span class="relative flex h-2 w-2">
+                                <span
+                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                            </span>
+                            Hiring International Students
                         </div>
+                        <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+                            Start Your <span class="text-accent">Career Journey</span> With Us
+                        </h2>
+                        <p class="text-slate-600 text-lg mb-8">
+                            Excellence Web Services is offering exclusive internship opportunities in high-demand
+                            digital domains. Join us online or at our Ludhiana office.
+                        </p>
+
+                        <div class="grid grid-cols-2 gap-4 mb-10">
+                            <div class="flex items-center gap-3 text-slate-700 font-medium">
+                                <i class="fas fa-bullhorn text-accent"></i> Digital Marketing
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-700 font-medium">
+                                <i class="fas fa-laptop-code text-accent"></i> Website Designing
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-700 font-medium">
+                                <i class="fas fa-shield-halved text-accent"></i> Cybersecurity
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-700 font-medium">
+                                <i class="fas fa-chart-line text-accent"></i> Data Analysis
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-slate-100 p-8 rounded-3xl shadow-xl shadow-slate-200/50">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Application Process</h3>
+                        <p class="text-slate-500 mb-6">Registration is simple. Connect with our team today.</p>
+
+                        <div class="space-y-4 mb-8">
+                            <a href="https://wa.me/918557081922"
+                                class="flex items-center gap-4 p-4 rounded-2xl bg-slate-50 hover:bg-green-50 border border-transparent hover:border-green-200 transition-all group">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-green-500 flex items-center justify-center text-white text-xl">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-500 font-bold uppercase tracking-wider">Whatsapp Us</p>
+                                    <p class="text-slate-900 font-bold">+91 85570-81922</p>
+                                </div>
+                            </a>
+
+                            <div class="flex items-start gap-4 p-4">
+                                <div class="text-accent text-xl mt-1">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <p class="text-slate-900 font-bold">Office Location</p>
+                                    <p class="text-slate-500 text-sm leading-relaxed">
+                                        SCO 44C Rajguru Nagar Market,<br>
+                                        Backside MBD Mall, Ludhiana
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="https://www.excellencegroupofinstitutes.com/web-services" target="_blank"
+                            class="block w-full py-4 bg-accent hover:bg-accent_light text-white text-center font-bold rounded-xl transition-all shadow-lg shadow-green-200">
+                            Visit Official Website
+                        </a>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="intern-showcase" class="py-24 bg-slate-50 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-slate-900 text-4xl font-bold mb-12 text-center">Our Collaborative Force, Our Current Interns
+            </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a href="ashis.html"
-                    class="group bg-card border border-white/10 rounded-3xl p-6 hover:border-accent transition-all hover:-translate-y-2">
-                    <div class="aspect-square rounded-2xl bg-dark mb-6 overflow-hidden">
-                        <img src="./assets/img/Ashish.jpeg" alt="Ashis"
-                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
-                    </div>
-                    <h4 class="text-xl font-bold text-white mb-1">Ashis</h4>
-                    <p class="text-accent text-sm font-semibold">Back-End Developer</p>
-                </a>
-
-                <a href="Dickens.html"
-                    class="group bg-card border border-white/10 rounded-3xl p-6 hover:border-accent transition-all hover:-translate-y-2">
-                    <div class="aspect-square rounded-2xl bg-dark mb-6 overflow-hidden">
-                        <img src="./assets/img/WhatsApp Image 2026-03-02 at 7.02.11 PM.jpeg" alt="Dickens"
-                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
-                    </div>
-                    <h4 class="text-xl font-bold text-white mb-1">Dickens</h4>
-                    <p class="text-accent text-sm font-semibold">Digital Marketing</p>
-                </a>
-
                 <a href="gabriel.html"
-                    class="group bg-card border border-white/10 rounded-3xl p-6 hover:border-accent transition-all hover:-translate-y-2">
-                    <div class="aspect-square rounded-2xl bg-dark mb-6 overflow-hidden">
+                    class="group bg-white border border-slate-200 rounded-3xl p-6 hover:border-accent transition-all hover:-translate-y-2">
+                    <div class="aspect-square rounded-2xl bg-slate-100 mb-6 overflow-hidden">
                         <img src="./assets/img/WhatsApp Image 2026-02-23 at 12.56.53 PM.jpeg" alt="Gabriel"
-                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                            class="w-full h-full object-cover">
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-1">Gabriel</h4>
+                    <h4 class="text-xl font-bold text-slate-900 mb-1">Gabriel</h4>
                     <p class="text-accent text-sm font-semibold">Full-Stack Developer</p>
                 </a>
 
-                <a href="karen.html"
-                    class="group bg-card border border-white/10 rounded-3xl p-6 hover:border-accent transition-all hover:-translate-y-2">
-                    <div class="aspect-square rounded-2xl bg-dark mb-6 overflow-hidden">
-                        <img src="./assets/img/Karen.jpeg" alt="Karen"
-                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                <a href="anurag.html"
+                    class="group bg-white border border-slate-200 rounded-3xl p-6 hover:border-accent transition-all hover:-translate-y-2">
+                    <div class="aspect-square rounded-2xl bg-slate-100 mb-6 overflow-hidden">
+                        <img src="./assets/img/Anurag.jpg" alt="Anurag" class="w-full h-full object-cover">
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-1">Karen</h4>
-                    <p class="text-accent text-sm font-semibold">Data Analyst</p>
+                    <h4 class="text-xl font-bold text-slate-900 mb-1">Anurag</h4>
+                    <p class="text-accent text-sm font-semibold">Front End Developer</p>
+                </a>
+
+                <a href="ashis.html"
+                    class="group bg-white border border-slate-200 rounded-3xl p-6 hover:border-accent transition-all hover:-translate-y-2">
+                    <div class="aspect-square rounded-2xl bg-slate-100 mb-6 overflow-hidden">
+                        <img src="./assets/img/Ashish.jpeg" alt="Ashis" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-1">Ashis Kumar</h4>
+                    <p class="text-accent text-sm font-semibold">Back End Developer</p>
+                </a>
+
+                <a href="Dickens.html"
+                    class="group bg-white border border-slate-200 rounded-3xl p-6 hover:border-accent transition-all hover:-translate-y-2">
+                    <div class="aspect-square rounded-2xl bg-slate-100 mb-6 overflow-hidden">
+                        <img src="./assets/img/WhatsApp Image 2026-03-02 at 7.02.11 PM.jpeg" alt="Dickens"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-1">Dickens Kapalo</h4>
+                    <p class="text-accent text-sm font-semibold">Digital Marketing</p>
                 </a>
 
                 <a href="donald.html"
-                    class="group bg-card border border-white/10 rounded-3xl p-6 hover:border-accent transition-all hover:-translate-y-2">
-                    <div class="aspect-square rounded-2xl bg-dark mb-6 overflow-hidden">
+                    class="group bg-white border border-slate-200 rounded-3xl p-6 hover:border-accent transition-all hover:-translate-y-2">
+                    <div class="aspect-square rounded-2xl bg-slate-100 mb-6 overflow-hidden">
                         <img src="./assets/img/WhatsApp Image 2026-03-02 at 7.06.32 PM.jpeg" alt="Donald"
-                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                            class="w-full h-full object-cover">
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-1">Donald</h4>
+                    <h4 class="text-xl font-bold text-slate-900 mb-1">Donald Chilengwe</h4>
                     <p class="text-accent text-sm font-semibold">Web Developer</p>
                 </a>
 
-                <a href="anurag.html"
-                    class="group bg-card border border-white/10 rounded-3xl p-6 hover:border-accent transition-all hover:-translate-y-2">
-                    <div class="aspect-square rounded-2xl bg-dark mb-6 overflow-hidden">
-                        <img src="./assets/img/Anurag.jpg" alt="Anurag"
-                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                <a href="karen.html"
+                    class="group bg-white border border-slate-200 rounded-3xl p-6 hover:border-accent transition-all hover:-translate-y-2">
+                    <div class="aspect-square rounded-2xl bg-slate-100 mb-6 overflow-hidden">
+                        <img src="./assets/img/Karen.jpeg" alt="Karen" class="w-full h-full object-cover">
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-1">Anurag</h4>
-                    <p class="text-accent text-sm font-semibold">Front-End Developer</p>
+                    <h4 class="text-xl font-bold text-slate-900 mb-1">Karen Mwasha</h4>
+                    <p class="text-accent text-sm font-semibold">Data Analyst</p>
                 </a>
             </div>
         </div>
     </section>
 
-    <section id="company-portfolio" class="py-24">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex justify-between items-end mb-12">
-                <div>
-                    <h2 class="text-4xl font-bold text-white">Core Company Projects</h2>
-                    <p class="text-slate-400 mt-2">Latest work from our development lab.</p>
-                </div>
-                <a href="gallery.html" class="text-accent hover:underline font-bold">View All Projects <i
-                        class="fas fa-chevron-right ml-1"></i></a>
-            </div>
-            <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            </div>
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+                Witness Excellence in <span class="text-[#FFD700]">Every Pixel</span>
+            </h2>
+            <p class="text-slate-600 text-lg mb-10">
+                From sleek interfaces to robust back-end architectures, our portfolio showcases the boundary-pushing
+                work our interns and experts produce daily.
+            </p>
+            <a href="gallery.html"
+                class="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white font-bold rounded-xl hover:bg-[#FFD700] hover:text-slate-900 transition-all shadow-xl">
+                Explore Full Gallery <i class="fas fa-arrow-right"></i>
+            </a>
         </div>
     </section>
 
-    <footer class="py-12 border-t border-white/5 text-center">
-        <div class="flex justify-center gap-6 mb-4">
-            <a href="https://www.instagram.com/excellence_web_services/"
-                class="text-slate-500 hover:text-accent transition-colors">Instagram</a>
-            <a href="https://www.excellencegroupofinstitutes.com/web-services"
-                class="text-slate-500 hover:text-accent transition-colors">Official Website</a>
-            <a href="admin.html" class="text-slate-500 hover:text-white transition-colors">
-                <i class="fas fa-user-shield mr-1"></i> Intern Login
-            </a>
+    <footer class="py-12 bg-slate-50 border-t border-slate-100 text-center">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-slate-900 font-bold text-xl mb-8">
+                Excellence Web Services
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-8 mb-8 text-sm font-medium text-slate-600">
+                <a href="https://www.instagram.com/excellence_web_services/"
+                    class="hover:text-[#FFD700] transition-colors">
+                    <i class="fab fa-instagram mr-2"></i>Instagram
+                </a>
+                <a href="https://www.excellencegroupofinstitutes.com/web-services"
+                    class="hover:text-[#FFD700] transition-colors">
+                    <i class="fas fa-globe mr-2"></i>Official Website
+                </a>
+                <a href="admin.html" class="hover:text-[#FFD700] transition-colors">
+                    <i class="fas fa-user-shield mr-2"></i>Admin Login
+                </a>
+            </div>
+
+            <p class="text-slate-400 text-sm">
+                &copy; 2026 Excellence Web Services. All rights reserved.
+            </p>
         </div>
-        <p class="text-slate-500 text-sm">&copy; 2026 Excellence Web Services. All rights reserved.</p>
     </footer>
 
-
-    <script type="module" src="./js/projects.js"></script>
-    <script src="./js/main.js"></script>
 </body>
 
 </html>
