@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excellence Web Services | Future of Digital Growth</title>
+    <link rel="icon" type="image/png" href="assets/Logo.png">
+    <meta name="description"
+        content="Custom website design, SEO, and digital marketing services for businesses in Ludhiana and beyond.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/futuristics.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════
+         GLOBAL ANIMATED BACKGROUND (fixed)
+    ════════════════════════════════════════════ -->
+    <div class="global-background">
+        <canvas id="hero-canvas"></canvas>
+        <div class="tech-grid-overlay"></div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         SPLASH SCREEN
+    ════════════════════════════════════════════ -->
+    <div id="splash-screen">
+        <div class="splash-content">
+            <img src="assets/Logo.png" alt="Excellence Web Services" class="splash-logo">
+            <div class="splash-loader"></div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         NAVIGATION
+    ════════════════════════════════════════════ -->
+    <header class="glass-nav" id="header">
+        <div class="logo">
+            <img src="assets/Logo.png" alt="Excellence Web Services Logo" class="nav-logo-img">
+            <span><span class="brand-highlight">Excellence</span> Web Services</span>
+        </div>
+        <nav class="nav-links" id="navLinks">
+            <a href="#services">Services</a>
+            <a href="#projects">Recent Work</a>
+            <a href="#about">About</a>
+            <a href="#faq">FAQ</a>
+        </nav>
+        <div class="header-actions">
+            <a href="#contact" class="primary-btn pulse-glow desktop-only">Get Started</a>
+            <button id="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle theme">
+                <span class="theme-toggle-thumb">☀️</span>
+            </button>
+            <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════
+         HERO SECTION
+    ════════════════════════════════════════════ -->
+    <header id="home" class="hero-section">
+        <div class="hero-visuals">
+            <div class="bg-typography scroll-parallax" data-speed="0.25">EXCELLENCE</div>
+            <div class="bg-typography outline-text scroll-parallax" data-speed="-0.18">DIGITAL</div>
+
+            <div class="glow-orb main-orb scroll-parallax" data-speed="0.1"></div>
+            <div class="glow-orb secondary-orb scroll-parallax" data-speed="0.15"></div>
+            <div class="glow-orb accent-orb"></div>
+        </div>
+
+        <div class="hero-container split-hero-container">
+            <div class="hero-content active fade-up">
+                <div class="badge">Pay After Service • Ludhiana's #1</div>
+                <h1 class="hero-title">Choose The Best <br><span class="brand-highlight">Web Services</span> Company.
+                </h1>
+                <p class="hero-subtitle">Our mission is simple: to provide high-quality web services with complete
+                    transparency and trust.</p>
+
+                <div class="hero-actions">
+                    <a href="#services" class="primary-btn pulse-glow lg-btn">Accelerate Now <svg viewBox="0 0 24 24"
+                            width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg></a>
+                    <a href="#projects" class="secondary-nav-btn desktop-only">View Portfolio <span>↓</span></a>
+                </div>
+
+                <div class="hero-social-proof slide-in-left">
+                    <div class="avatar-group">
+                        <div class="avatar"><img src="assets/service_web.png" alt="Web"></div>
+                        <div class="avatar"><img src="assets/service_seo.png" alt="SEO"></div>
+                        <div class="avatar"><img src="assets/service_marketing.png" alt="Marketing"></div>
+                    </div>
+                    <div class="proof-text">
+                        <strong>150+</strong>
+                        <span>Businesses Scaled</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right side Floating UI Cards -->
+            <div class="hero-3d-composition slide-in-right">
+
+
+
+                <div class="glass-float-card fc-1">
+                    <div class="fc-header">
+                        <div class="fc-icon pulse-icon">🚀</div>
+                        <div>
+                            <h4>Traffic Growth</h4>
+                            <p class="fc-sub">+128% <span>vs last month</span></p>
+                        </div>
+                    </div>
+                    <div class="fc-chart">
+                        <div class="fc-bar" style="height: 30%"></div>
+                        <div class="fc-bar" style="height: 45%"></div>
+                        <div class="fc-bar" style="height: 60%"></div>
+                        <div class="fc-bar"
+                            style="height: 100%; filter: drop-shadow(0 0 8px var(--accent-gold)); background: var(--accent-gold);">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MOUSE-TRACKING 3D AVATAR -->
+                <div class="avatar-3d-container" id="tilt-avatar-container">
+                    <img src="assets/3d_avatar.png" alt="3D Cyber Avatar coding with Logo" class="avatar-3d-img">
+                </div>
+
+                <div class="glass-float-card fc-2">
+                    <div class="fc-header">
+                        <div class="fc-icon gold-ring">⚡</div>
+                        <div>
+                            <h4>Core Web Vitals</h4>
+                            <p class="fc-sub">99/100 <span>Performance</span></p>
+                        </div>
+                    </div>
+                    <div class="fc-progress-wrapper">
+                        <div class="fc-progress-track">
+                            <div class="fc-progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-float-card fc-3">
+                    <div class="fc-header">
+                        <div class="fc-icon">💎</div>
+                        <div>
+                            <h4>SEO Rank</h4>
+                            <p class="fc-sub">Position #1 <span>Google</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll to Explore</span>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════
+         SERVICES SECTION (Sticky Scroll)
+    ════════════════════════════════════════════ -->
+    <main id="services" class="info-container section-relative">
+        <div class="tech-mesh"></div>
+        <div class="section-header align-left">
+            <h2 class="section-title">Our Professional Services</h2>
+            <p class="section-desc">Tailored strategies powered by the latest digital infrastructure. Tap any service to reveal specialized insights.</p>
+        </div>
+
+        <div class="services-list">
+            <!-- Service 1 -->
+            <div class="service-item shimmer-trigger" onclick="toggleService(this)">
+                <div class="service-header">
+                    <div class="service-header-left">
+                        <div class="service-icon-box">
+                            <img src="assets/service_web.png" alt="Website Designing">
+                        </div>
+                        <h3>Website Designing</h3>
+                    </div>
+                    <div class="service-toggle-icon">+</div>
+                </div>
+                <div class="service-body">
+                    <div class="service-body-inner">
+                        <p>We focus on creating modern, responsive, and visually appealing designs that perfectly align with your brand identity. Our designs ensure fast-loading pages and seamless navigation across all devices, including mobile, tablets, and desktops.</p>
+                        <a href="#contact" class="primary-btn pulse-glow lg-btn">Get Started Now →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-item shimmer-trigger" onclick="toggleService(this)">
+                <div class="service-header">
+                    <div class="service-header-left">
+                        <div class="service-icon-box">
+                            <img src="assets/service_seo.png" alt="SEO & Digital Marketing">
+                        </div>
+                        <h3>SEO & Marketing</h3>
+                    </div>
+                    <div class="service-toggle-icon">+</div>
+                </div>
+                <div class="service-body">
+                    <div class="service-body-inner">
+                        <p>Grow your online presence with our advanced SEO and social media marketing strategies. We specialize in Google local listing optimization, targeted Facebook/Instagram ad campaigns, and YouTube marketing to drive high-quality customers to your business.</p>
+                        <a href="#contact" class="primary-btn pulse-glow lg-btn">Get Started Now →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-item shimmer-trigger" onclick="toggleService(this)">
+                <div class="service-header">
+                    <div class="service-header-left">
+                        <div class="service-icon-box">
+                            <img src="assets/service_marketing.png" alt="Web Development">
+                        </div>
+                        <h3>Web Development</h3>
+                    </div>
+                    <div class="service-toggle-icon">+</div>
+                </div>
+                <div class="service-body">
+                    <div class="service-body-inner">
+                        <p>Build a secure, scalable, and high-performance foundation for your business. Our expert development team uses pure, clean code and the latest technologies to create custom web applications and robust platforms tailored to your specific needs.</p>
+                        <a href="#contact" class="primary-btn pulse-glow lg-btn">Get Started Now →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="service-item shimmer-trigger" onclick="toggleService(this)">
+                <div class="service-header">
+                    <div class="service-header-left">
+                        <div class="service-icon-box">
+                            <img src="assets/service_ecommerce.png" alt="Comprehensive IT Services">
+                        </div>
+                        <h3>IT Services</h3>
+                    </div>
+                    <div class="service-toggle-icon">+</div>
+                </div>
+                <div class="service-body">
+                    <div class="service-body-inner">
+                        <p>Your trusted partner for all technical IT needs. From troubleshooting and secure system maintenance to network, hardware, and software support. We provide ongoing monitoring to minimize downtime and keep your business running smoothly.</p>
+                        <a href="#contact" class="primary-btn pulse-glow lg-btn">Get Started Now →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ═══════════════════════════════════════
+         PROJECTS SECTION — 3D Orbital Wheel
+    ════════════════════════════════════════════ -->
+    <section id="projects" class="info-container wheel-section">
+        <div class="section-header">
+            <h2 class="section-title">The Digital Galaxy</h2>
+            <p class="section-desc">Witness the digital ecosystems we've co-curated with our partners.</p>
+        </div>
+
+        <div class="wheel-container">
+            <div class="wheel-inner">
+                <div class="project-card wheel-card shimmer-trigger">
+                    <div class="project-img-wrapper">
+                        <img src="assets/Aashiya Greens.png" alt="Aashiyana Greens" class="project-img">
+                        <span class="project-tag">Modern Living</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Aashiyana Greens</h3>
+                        <p>We partnered to build a visionary property platform, redefining luxury real estate
+                            discoverability.</p>
+                        <a href="https://aashiyanagreens.com/" target="_blank" rel="noopener noreferrer"
+                            class="project-link">Explore the Vision <span>→</span></a>
+                    </div>
+                </div>
+
+                <div class="project-card wheel-card shimmer-trigger">
+                    <div class="project-img-wrapper">
+                        <img src="assets/Capital store.png" alt="Capital Store" class="project-img">
+                        <span class="project-tag">Digital Retail</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Capital Store</h3>
+                        <p>A collaborative journey to create a frictionless shopping experience for the modern consumer.
+                        </p>
+                        <a href="https://www.capitalstorecs.com/" target="_blank" rel="noopener noreferrer"
+                            class="project-link">Explore the Vision <span>→</span></a>
+                    </div>
+                </div>
+
+                <div class="project-card wheel-card shimmer-trigger">
+                    <div class="project-img-wrapper">
+                        <img src="assets/Divya Agro Traders.png" alt="Divya Agro Traders" class="project-img">
+                        <span class="project-tag">Agri-Future</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Divya Agro Traders</h3>
+                        <p>Bridging the gap between agriculture and technology with a high-performance B2B portal.</p>
+                        <a href="https://www.divyaagrotraders.com/" target="_blank" rel="noopener noreferrer"
+                            class="project-link">Explore the Vision <span>→</span></a>
+                    </div>
+                </div>
+
+                <div class="project-card wheel-card shimmer-trigger">
+                    <div class="project-img-wrapper">
+                        <img src="assets/Wow kids Worksheets.png" alt="Wow Kids Worksheets" class="project-img">
+                        <span class="project-tag">Interactive Learning</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Wow Kids Worksheets</h3>
+                        <p>Co-designing an engaging digital platform to revolutionize early childhood education.</p>
+                        <a href="https://www.wowkidsworksheets.in/" target="_blank" rel="noopener noreferrer"
+                            class="project-link">Explore the Vision <span>→</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wheel-nav">
+                <button id="wheel-prev" class="wheel-btn" aria-label="Previous Project">←</button>
+                <div class="wheel-progress">
+                    <div id="wheel-bar" class="wheel-bar"></div>
+                </div>
+                <button id="wheel-next" class="wheel-btn" aria-label="Next Project">→</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         ABOUT SECTION
+    ════════════════════════════════════════════ -->
+    <section id="about" class="info-container split-section">
+        <div class="split-content slide-in-left">
+            <div class="section-header align-left">
+                <h2 class="section-title">We're More Than a Service</h2>
+                <p class="section-desc">We're your dedicated team of digital growth experts in Ludhiana.</p>
+            </div>
+            <div class="about-content glass-panel align-left">
+                <p>At <strong>Excellence Web Services</strong>, we believe that every business has a unique story worth
+                    telling. Under the vision of Suryansh Wadhwa, our team works closely with visionaries in Ludhiana
+                    and across <strong>Pan India</strong> to craft immersive digital experiences. We specialize in
+                    high-performance Web Design, SEO, and IT solutions tailored to help you scale efficiently and
+                    authentically.</p>
+            </div>
+        </div>
+        <div class="split-image-wrapper slide-in-right">
+            <img src="assets/about_gold_abstract.png" alt="Digital Agency Workflow" class="floating-img about-img">
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         OUR PROMISE SECTION
+    ════════════════════════════════════════════ -->
+    <section id="promise" class="info-container promise-section">
+        <div class="glass-panel tech-grid-bg promise-glass">
+            <div class="glow-orb promise-orb-1"></div>
+            <div class="glow-orb promise-orb-2"></div>
+
+            <h2 class="section-title" style="margin-bottom: 16px; position: relative; z-index: 2;">Our Relationship with
+                You</h2>
+            <p class="section-desc" style="margin: 0 auto 55px; position: relative; z-index: 2;">We're not just a
+                vendor; we're an extension of your team. Here's what you can always count on from us.</p>
+
+            <div class="promise-grid" style="position: relative; z-index: 2;">
+                <div class="promise-item futuristic-card shimmer-trigger">
+                    <div class="promise-icon-wrapper">
+                        <div class="promise-icon">💰</div>
+                    </div>
+                    <h4>Pay After Service</h4>
+                    <p>We believe in the quality of our work. That's why we offer a unique model where you pay only
+                        after we deliver the agreed-upon results for your business.</p>
+                </div>
+                <div class="promise-item futuristic-card shimmer-trigger">
+                    <div class="promise-icon-wrapper">
+                        <div class="promise-icon">⚡</div>
+                    </div>
+                    <h4>Fast &amp; Fair Results</h4>
+                    <p>Just like our philosophy, we work quickly without cutting corners. You get fair pricing and
+                        high-quality work, every single time.</p>
+                </div>
+                <div class="promise-item futuristic-card shimmer-trigger">
+                    <div class="promise-icon-wrapper">
+                        <div class="promise-icon">💎</div>
+                    </div>
+                    <h4>Absolute Excellence</h4>
+                    <p>We're called Excellence for a reason. We don't stop until every pixel is perfect and your brand
+                        is shining online as it should.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         FAQ SECTION
+    ════════════════════════════════════════════ -->
+    <section id="faq" class="info-container">
+        <div class="section-header">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-desc">Common queries about our services and pricing.</p>
+        </div>
+        <div class="faq-grid">
+            <div class="faq-card shimmer-trigger">
+                <div class="faq-header">
+                    <h3>How much does a website cost?</h3>
+                    <div class="faq-toggle-icon">+</div>
+                </div>
+                <div class="faq-body">
+                    <p>Website costs vary based on complexity. Basic business websites start from ₹15,000, while custom
+                    e-commerce solutions range from ₹25,000 to ₹1,00,000+. Contact us for a personalized quote.</p>
+                </div>
+            </div>
+            <div class="faq-card shimmer-trigger">
+                <div class="faq-header">
+                    <h3>What SEO services do you offer?</h3>
+                    <div class="faq-toggle-icon">+</div>
+                </div>
+                <div class="faq-body">
+                    <p>We provide comprehensive SEO including local SEO in Ludhiana, advanced on-page optimization, keyword
+                    research, content strategy, link building, and Google My Business optimization.</p>
+                </div>
+            </div>
+            <div class="faq-card shimmer-trigger">
+                <div class="faq-header">
+                    <h3>Do you provide ongoing maintenance?</h3>
+                    <div class="faq-toggle-icon">+</div>
+                </div>
+                <div class="faq-body">
+                    <p>Yes. We offer continuous website maintenance packages wrapping security updates, regular content
+                    improvements, performance tracking, secure backups, and fast technical support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         CONTACT SECTION
+    ════════════════════════════════════════════ -->
+    <section id="contact" class="info-container">
+        <div class="section-header">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-desc">Ready to elevate your digital presence? Reach out to our expert team today.</p>
+        </div>
+
+        <div class="contact-wrapper">
+            <div class="contact-info-cards slide-in-left">
+                <div class="contact-info-card">
+                    <div class="contact-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round" class="tech-icon">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>+91-8557081922</p>
+                    </div>
+                </div>
+
+                <div class="contact-info-card">
+                    <div class="contact-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round" class="tech-icon">
+                            <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>excellencegroupofinstitutes@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-info-card">
+                    <div class="contact-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round" class="tech-icon">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Location</h4>
+                        <p>Basant City &amp; Rajguru Nagar Market,<br>Ludhiana, Punjab (141001)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-container slide-in-right">
+                <form action="#" method="POST"
+                    onsubmit="event.preventDefault(); alert('Thank you! We\'ll be in touch within 24 hours.');">
+                    <div class="form-group">
+                        <input type="text" id="form-name" placeholder="Your Name" required autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="form-email" placeholder="Your Email Address" required
+                            autocomplete="email">
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="form-phone" placeholder="Your Phone Number" autocomplete="tel">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="form-message"
+                            placeholder="Tell us about your project or what you need help with..." required></textarea>
+                    </div>
+                    <button type="submit" class="primary-btn submit-btn pulse-glow">Send Message →</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         FOOTER
+    ════════════════════════════════════════════ -->
+    <footer id="footer" class="footer-section info-container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <img src="assets/Logo.png" alt="Excellence Web Services Logo" class="footer-logo-img">
+                    <span><span class="brand-highlight">Excellence</span> Web Services</span>
+                </div>
+                <p>Empowering forward-thinking businesses with advanced digital solutions.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#projects">Recent Work</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Details</h3>
+                <p><strong>Phone:</strong> +91-8557081922</p>
+                <p><strong>Email:</strong> excellencegroupofinstitutes@gmail.com</p>
+                <p><strong>Location:</strong> Basant City &amp; Rajguru Nagar Market, Ludhiana, Punjab (141001)</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Excellence Web Services. All rights reserved. Crafted with precision by Gabriel Manhanga.</p>
+        </div>
+    </footer>
+
+
+
+    <!-- ═══════════════════════════════════════
+         WHATSAPP FLOAT
+    ════════════════════════════════════════════ -->
+    <a href="https://wa.me/918557081922?text=Hello%20Excellence%20Web%20Services!" class="whatsapp-float"
+        target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" class="wa-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+            <path
+                d="M12.031 0C5.383 0 0 5.383 0 12.031c0 2.651.854 5.111 2.302 7.042l-1.6 5.86 6.002-1.574A11.968 11.968 0 0012.031 24c6.648 0 12.031-5.383 12.031-12.031S18.679 0 12.031 0zm0 22.016c-2.158 0-4.148-.568-5.83-1.542l-.418-.248-3.486.914.932-3.4-.273-.434a9.96 9.96 0 01-1.608-5.467c0-5.545 4.512-10.057 10.057-10.057S22.088 6.293 22.088 11.838s-4.512 10.057-10.057 10.057zm5.518-7.553c-.302-.152-1.792-.884-2.072-.986-.279-.1-.482-.152-.685.152-.203.304-.784.986-.961 1.188-.178.203-.355.228-.657.076-2.12-.907-3.626-2.046-4.542-4.113-.152-.304.152-.456.304-.761.05-.1.152-.25.228-.38a1.64 1.64 0 00.127-.253c.101-.203.05-.38-.025-.532-.076-.152-.685-1.648-.938-2.257-.245-.595-.494-.515-.685-.525-.178-.008-.381-.01-.584-.01s-.532.076-.811.38c-.28.304-1.066 1.04-1.066 2.535s1.092 2.94 1.243 3.143c.152.203 2.144 3.275 5.19 4.593 1.954.845 2.766.786 3.273.66.568-.142 1.792-.733 2.045-1.443.254-.71.254-1.318.178-1.442-.076-.126-.28-.202-.583-.354z" />
+        </svg>
+    </a>
+
+    <script src="js/main.js"></script>
+    <script src="js/animation.js"></script>
+
+</body>
+
+</html>

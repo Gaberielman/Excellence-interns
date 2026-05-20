@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
 <head>
@@ -11,36 +11,59 @@
             theme: {
                 extend: {
                     colors: {
-                        dark: '#050505',
-                        card: '#0a0a0a',
-                        accent: '#38bdf8',
+                        lightbg: '#f8fafc',
+                        cardbg: 'rgba(255, 255, 255, 0.7)',
+                        cardborder: 'rgba(255, 255, 255, 1)',
+                        accent: '#FFD700',      
+                        accent_light: '#ffeb80',
                         purple_glow: '#a855f7',
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
                     },
                     borderRadius: { '4xl': '2rem' }
                 }
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+    <style>
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        .orb-1 { width: 400px; height: 400px; background: rgba(255, 215, 0, 0.2); top: -100px; left: -100px; }
+        .orb-2 { width: 300px; height: 300px; background: rgba(255, 215, 0, 0.15); bottom: 10%; right: -50px; }
+        .glass-card {
+            background: var(--cardbg);
+            border: 1px solid var(--cardborder);
+            backdrop-filter: blur(16px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
+    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body class="bg-dark text-slate-200 font-['Plus_Jakarta_Sans'] selection:bg-accent/30 overflow-x-hidden">
+<body class="bg-lightbg text-slate-700 font-sans selection:bg-accent/30 overflow-x-hidden relative">`n    <!-- Background Orbs -->`n    <div class="glow-orb orb-1"></div>`n    <div class="glow-orb orb-2"></div>
 
-    <header class="fixed top-0 w-full z-50 backdrop-blur-md border-b border-white/5">
+    <header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
         <nav class="max-w-7xl mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
-            <div class="text-white font-bold text-lg md:text-xl flex items-center gap-2">
+            <div class="text-slate-900 font-bold text-lg md:text-xl flex items-center gap-2">
                 <span class="text-accent">{ }</span> Karen.Mwasha
             </div>
-            <div class="hidden lg:flex gap-8 text-sm font-medium text-slate-400">
-                <a href="#" class="hover:text-white transition-colors">Home</a>
-                <a href="#about" class="hover:text-white transition-colors">About</a>
-                <a href="#services" class="hover:text-white transition-colors">Services</a>
-                <a href="#projects" class="hover:text-white transition-colors">Portfolio</a>
+            <div class="hidden lg:flex gap-8 text-sm font-medium text-slate-600">
+                <a href="#" class="hover:text-slate-900 transition-colors">Home</a>
+                <a href="#about" class="hover:text-slate-900 transition-colors">About</a>
+                <a href="#services" class="hover:text-slate-900 transition-colors">Services</a>
+                <a href="#projects" class="hover:text-slate-900 transition-colors">Portfolio</a>
             </div>
             <a href="#contact"
-                class="bg-gradient-to-r from-purple-600 to-accent px-4 md:px-6 py-2 rounded-lg text-white font-bold text-xs md:text-sm hover:scale-105 transition-transform">
+                class="bg-[#d4af37] hover:bg-[#b5952f] px-4 md:px-6 py-2 rounded-lg text-white font-bold text-xs md:text-sm hover:scale-105 transition-transform">
                 Contact
             </a>
         </nav>
@@ -48,26 +71,26 @@
 
     <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
         <div
-            class="absolute inset-0 opacity-20 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/circuit-board.png')]">
+            class="absolute inset-0 opacity-20 pointer-events-none hidden">
         </div>
 
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10 py-12">
             <div class="space-y-6 md:space-y-8 text-center lg:text-left">
-                <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight text-white">
-                    Decoding <span class="text-purple_glow">Complex</span><br>
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight text-slate-900">
+                    Decoding <span class="text-[#d4af37]">Complex</span><br>
                     <span class="text-accent">Data</span>
                 </h1>
-                <p class="text-slate-400 text-base md:text-lg max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                <p class="text-slate-600 text-base md:text-lg max-w-lg mx-auto lg:mx-0 leading-relaxed">
                     Data Analyst specializing in turning raw information into actionable insights. I bridge the gap
                     between complex datasets and strategic business decisions.
                 </p>
                 <div class="flex flex-wrap justify-center lg:justify-start gap-4">
                     <a href="#projects"
-                        class="inline-block text-center w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-purple-600 to-accent rounded-xl font-bold text-white shadow-lg">
+                        class="inline-block text-center w-full sm:w-auto px-8 py-4 bg-[#d4af37] hover:bg-[#b5952f] rounded-xl font-bold text-white shadow-lg">
                         View Analysis
                     </a>
                     <a href="#contact"
-                        class="inline-block text-center w-full sm:w-auto px-8 py-4 border border-white/10 bg-white/5 rounded-xl font-bold hover:bg-white/10 transition-all">
+                        class="inline-block text-center w-full sm:w-auto px-8 py-4 border border-slate-200 bg-slate-100 rounded-xl font-bold hover:bg-slate-200 transition-all">
                         Let's Talk Data
                     </a>
                 </div>
@@ -92,7 +115,7 @@
                         </text>
                     </svg>
                     <div
-                        class="w-56 h-56 md:w-80 md:h-80 rounded-full border-[6px] md:border-[10px] border-white/5 p-4 bg-dark z-20">
+                        class="w-56 h-56 md:w-80 md:h-80 rounded-full border-[6px] md:border-[10px] border-slate-200 p-4 bg-lightbg z-20">
                         <img src="./assets/img/Karen.jpeg" alt="Karen Mwasha"
                             class="w-full h-full object-cover rounded-full">
                     </div>
@@ -103,56 +126,56 @@
 
     <section class="max-w-7xl mx-auto px-6 py-12 md:py-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <div
-            class="bg-card border border-white/10 rounded-3xl p-8 md:p-10 flex flex-col justify-center items-center lg:items-start gap-4">
+            class="glass-card shadow-sm border border-slate-200 rounded-3xl p-8 md:p-10 flex flex-col justify-center items-center lg:items-start gap-4">
             <i class="fas fa-database text-accent text-3xl md:text-4xl"></i>
             <div class="text-center lg:text-left">
-                <h3 class="text-4xl md:text-5xl font-bold text-white">2+</h3>
+                <h3 class="text-4xl md:text-5xl font-bold text-slate-900">2+</h3>
                 <p class="text-slate-500 uppercase tracking-widest text-xs font-bold mt-2">Years of Analysis</p>
             </div>
         </div>
         <div
-            class="bg-card border border-white/10 rounded-3xl p-8 md:p-10 flex flex-col justify-center items-center lg:items-start gap-4">
-            <i class="fas fa-chart-pie text-purple_glow text-3xl md:text-4xl"></i>
+            class="glass-card shadow-sm border border-slate-200 rounded-3xl p-8 md:p-10 flex flex-col justify-center items-center lg:items-start gap-4">
+            <i class="fas fa-chart-pie text-[#d4af37] text-3xl md:text-4xl"></i>
             <div class="text-center lg:text-left">
-                <h3 class="text-4xl md:text-5xl font-bold text-white">15+</h3>
+                <h3 class="text-4xl md:text-5xl font-bold text-slate-900">15+</h3>
                 <p class="text-slate-500 uppercase tracking-widest text-xs font-bold mt-2">Reports Automated</p>
             </div>
         </div>
         <div
-            class="sm:col-span-2 lg:col-span-1 bg-card border border-white/10 rounded-3xl p-8 font-mono text-xs md:text-sm leading-relaxed relative overflow-hidden">
+            class="sm:col-span-2 lg:col-span-1 glass-card shadow-sm border border-slate-200 rounded-3xl p-8 font-mono text-xs md:text-sm leading-relaxed relative overflow-hidden">
             <div class="absolute top-0 right-0 p-4 opacity-10 text-accent text-5xl italic">[]</div>
-            <p class="text-purple-400">const <span class="text-white">karenMwasha</span> = {</p>
-            <p class="pl-4 text-slate-400">role: <span class="text-yellow-200">"Data Analyst"</span>,</p>
-            <p class="pl-4 text-slate-400">skills: [</p>
+            <p class="text-slate-400">const <span class="text-slate-900">karenMwasha</span> = {</p>
+            <p class="pl-4 text-slate-600">role: <span class="text-[#d4af37]">"Data Analyst"</span>,</p>
+            <p class="pl-4 text-slate-600">skills: [</p>
             <p class="pl-8 text-accent">"Python", "SQL", "Power BI", "Excel"</p>
-            <p class="pl-4 text-slate-400">],</p>
-            <p class="pl-4 text-slate-400">focus: <span class="text-yellow-200">"Business Intelligence"</span></p>
-            <p class="text-purple-400">}</p>
+            <p class="pl-4 text-slate-600">],</p>
+            <p class="pl-4 text-slate-600">focus: <span class="text-[#d4af37]">"Business Intelligence"</span></p>
+            <p class="text-slate-400">}</p>
         </div>
     </section>
 
     <section id="about" class="max-w-7xl mx-auto px-6 py-20">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div class="space-y-6">
-                <h2 class="text-4xl font-bold text-white">About <span class="text-purple_glow">Karen Mwasha</span></h2>
-                <p class="text-slate-400 leading-relaxed text-lg">
+                <h2 class="text-4xl font-bold text-slate-900">About <span class="text-[#d4af37]">Karen Mwasha</span></h2>
+                <p class="text-slate-600 leading-relaxed text-lg">
                     I am a Data Analyst dedicated to finding the "why" behind the numbers. My expertise lies in cleaning
                     complex datasets, identifying trends, and creating visualizations that tell a compelling story.
                 </p>
                 <div class="grid grid-cols-2 gap-4 pt-4">
-                    <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
+                    <div class="bg-slate-100 p-4 rounded-2xl border border-slate-200">
                         <p class="text-accent font-bold text-2xl">95%</p>
                         <p class="text-xs text-slate-500 uppercase font-bold">SQL & Databases</p>
                     </div>
-                    <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
-                        <p class="text-purple_glow font-bold text-2xl">90%</p>
+                    <div class="bg-slate-100 p-4 rounded-2xl border border-slate-200">
+                        <p class="text-[#d4af37] font-bold text-2xl">90%</p>
                         <p class="text-xs text-slate-500 uppercase font-bold">Data Viz (BI)</p>
                     </div>
-                    <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
-                        <p class="text-purple_glow font-bold text-2xl">85%</p>
+                    <div class="bg-slate-100 p-4 rounded-2xl border border-slate-200">
+                        <p class="text-[#d4af37] font-bold text-2xl">85%</p>
                         <p class="text-xs text-slate-500 uppercase font-bold">Python (Pandas)</p>
                     </div>
-                    <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
+                    <div class="bg-slate-100 p-4 rounded-2xl border border-slate-200">
                         <p class="text-accent font-bold text-2xl">90%</p>
                         <p class="text-xs text-slate-500 uppercase font-bold">Statistical Analysis</p>
                     </div>
@@ -160,10 +183,10 @@
             </div>
             <div class="relative group">
                 <div
-                    class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-accent rounded-3xl blur opacity-20 transition duration-1000">
+                    class="absolute -inset-1 bg-[#d4af37] hover:bg-[#b5952f] rounded-3xl blur opacity-20 transition duration-1000">
                 </div>
                 <img src="./assets/img/Karen.jpeg"
-                    class="relative rounded-3xl border border-white/10 grayscale hover:grayscale-0 transition-all duration-500"
+                    class="relative rounded-3xl border border-slate-200 grayscale hover:grayscale-0 transition-all duration-500"
                     alt="Karen Analysis">
             </div>
         </div>
@@ -172,135 +195,65 @@
     <section id="services" class="relative py-24 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
                     Analytical <span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-purple_glow to-accent">Solutions</span>
+                        class="text-[#d4af37]">Solutions</span>
                 </h2>
-                <p class="text-slate-400 max-w-2xl mx-auto text-lg">Transforming data into strategic assets through
+                <p class="text-slate-600 max-w-2xl mx-auto text-lg">Transforming data into strategic assets through
                     modern analytical frameworks.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-card border border-white/10 p-8 rounded-3xl hover:border-accent/50 group relative">
+                <div class="glass-card shadow-sm border border-slate-200 p-8 rounded-3xl hover:border-accent/50 group relative">
                     <div
                         class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center text-accent text-2xl mb-6">
                         <i class="fas fa-magnifying-glass-chart"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Exploratory Data Analysis</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Identifying patterns, outliers, and hypotheses
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Exploratory Data Analysis</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Identifying patterns, outliers, and hypotheses
                         through rigorous statistical exploration.</p>
                 </div>
-                <div class="bg-card border border-white/10 p-8 rounded-3xl hover:border-accent/50 group relative">
+                <div class="glass-card shadow-sm border border-slate-200 p-8 rounded-3xl hover:border-accent/50 group relative">
                     <div
-                        class="w-14 h-14 bg-purple_glow/10 rounded-2xl flex items-center justify-center text-purple_glow text-2xl mb-6">
+                        class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center text-[#d4af37] text-2xl mb-6">
                         <i class="fas fa-desktop"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">BI Dashboarding</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Developing real-time, interactive dashboards using
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">BI Dashboarding</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Developing real-time, interactive dashboards using
                         Power BI and Tableau for executive decision-making.</p>
                 </div>
-                <div class="bg-card border border-white/10 p-8 rounded-3xl hover:border-accent/50 group relative">
+                <div class="glass-card shadow-sm border border-slate-200 p-8 rounded-3xl hover:border-accent/50 group relative">
                     <div
                         class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center text-accent text-2xl mb-6">
                         <i class="fas fa-filter"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">ETL Processes</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Cleaning and structuring messy data from multiple
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">ETL Processes</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Cleaning and structuring messy data from multiple
                         sources into a single source of truth.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-20">
+        <section id="projects" class="py-20 bg-slate-100">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl md:text-5xl font-bold text-white text-center mb-12">Featured <span
-                    class="text-purple_glow">Analysis</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <div
-                    class="bg-card border border-white/10 rounded-2xl overflow-hidden group hover:border-accent/40 transition-all">
-                    <div class="h-48 bg-white/5 relative overflow-hidden">
-                        <img src="assets/img/1..png" alt="Market Insight Analysis"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100">
-                        <div class="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent"></div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-3">
-                            <h3 class="font-bold text-white text-xl">Market Insight Report</h3>
-                            <span
-                                class="text-[10px] border border-white/20 px-2 py-1 rounded text-slate-400">Analysis</span>
-                        </div>
-                        <p class="text-slate-400 text-sm mb-6">Comprehensive data exploration focused on identifying
-                            emerging market trends and consumer behavior patterns.</p>
-                        <div class="flex justify-between items-center pt-4 border-t border-white/5 text-sm font-bold">
-                            <a href="https://gemini.google.com/share/c80473852d98" target="_blank"
-                                class="text-white hover:text-accent">Access Project <i
-                                    class="fas fa-external-link-alt ml-1"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    class="bg-card border border-white/10 rounded-2xl overflow-hidden group hover:border-accent/40 transition-all">
-                    <div class="h-48 bg-white/5 relative overflow-hidden">
-                        <img src="assets/img/2..png"
-                            alt="Data Engineering Pipeline"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100">
-                        <div class="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent"></div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-3">
-                            <h3 class="font-bold text-white text-xl">Data Engineering Pipeline</h3>
-                            <span class="text-[10px] border border-white/20 px-2 py-1 rounded text-slate-400">ETL</span>
-                        </div>
-                        <p class="text-slate-400 text-sm mb-6">Automated data cleaning and transformation scripts to
-                            ensure high-quality datasets for downstream reporting.</p>
-                        <div class="flex justify-between items-center pt-4 border-t border-white/5 text-sm font-bold">
-                            <a href="https://gemini.google.com/share/5bb15b506b03" target="_blank"
-                                class="text-white hover:text-accent">Access Project <i
-                                    class="fas fa-external-link-alt ml-1"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    class="bg-card border border-white/10 rounded-2xl overflow-hidden group hover:border-accent/40 transition-all">
-                    <div class="h-48 bg-white/5 relative overflow-hidden">
-                        <img src="assets/img/3..png" alt="Operational Dashboard"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100">
-                        <div class="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent"></div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-3">
-                            <h3 class="font-bold text-white text-xl">Operational Dashboard</h3>
-                            <span
-                                class="text-[10px] border border-white/20 px-2 py-1 rounded text-slate-400">Visualization</span>
-                        </div>
-                        <p class="text-slate-400 text-sm mb-6">Interactive business intelligence solutions providing
-                            real-time visibility into key performance indicators.</p>
-                        <div class="flex justify-between items-center pt-4 border-t border-white/5 text-sm font-bold">
-                            <a href="https://gemini.google.com/share/2c8473e4b3a6" target="_blank"
-                                class="text-white hover:text-accent">Access Project <i
-                                    class="fas fa-external-link-alt ml-1"></i></a>
-                        </div>
-                    </div>
-                </div>
-
+            <h2 class="text-3xl md:text-5xl font-bold text-slate-900 text-center mb-12">Featured <span class="text-[#d4af37]">Projects</span></h2>
+            <div id="project-grid" data-intern-id="karen" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             </div>
         </div>
+        <script type="module" src="./js/projects.js"></script>
     </section>
 
     <section id="contact" class="max-w-7xl mx-auto px-6 py-20 text-center">
-        <div class="bg-card border border-white/10 rounded-4xl p-12 relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent">
+        <div class="glass-card shadow-sm border border-slate-200 rounded-4xl p-12 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent/50 to-transparent">
             </div>
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Need <span class="text-accent">Insights?</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Need <span class="text-accent">Insights?</span>
             </h2>
-            <p class="text-slate-400 mb-10 max-w-xl mx-auto">Available for freelance data projects or full-time
+            <p class="text-slate-600 mb-10 max-w-xl mx-auto">Available for freelance data projects or full-time
                 opportunities. Let's make sense of your data together.</p>
             <div class="flex flex-col md:flex-row justify-center gap-6">
                 <a href="mailto:karenmwasha@example.com"
-                    class="px-10 py-4 bg-white text-black font-bold rounded-xl hover:bg-accent hover:text-white transition-all">
+                    class="px-10 py-4 bg-white text-black font-bold rounded-xl hover:bg-accent hover:text-slate-900 transition-all">
                     Send an Email
                 </a>
                 <div class="flex items-center justify-center gap-6 text-2xl">
@@ -313,11 +266,11 @@
         </div>
     </section>
 
-    <footer class="py-12 border-t border-white/5 text-center">
+    <footer class="py-12 border-t border-slate-200 text-center">
         <p class="text-slate-500 text-sm">&copy; 2026 - Excellence Web Services . All Rights Reserved.</p>
     </footer>
 
-    <script src="./js/projects.js"></script>
+
     <script src="./js/main.js"></script>
 
 </body>

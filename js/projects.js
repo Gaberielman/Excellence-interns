@@ -16,32 +16,44 @@ const db = getFirestore(app);
 const container = document.getElementById('project-grid');
 
 if (container) {
+    const targetInternId = container.getAttribute('data-intern-id');
     const q = query(collection(db, "projects"), orderBy("createdAt", "desc"));
 
     // Real-time listener: The page updates automatically when an intern posts!
     onSnapshot(q, (snapshot) => {
-        if (snapshot.empty) {
+        let docs = snapshot.docs;
+        
+        // Filter if this page is for a specific intern
+        if (targetInternId && targetInternId !== 'all') {
+            docs = docs.filter(doc => doc.data().internId === targetInternId);
+        }
+
+        if (docs.length === 0) {
             container.innerHTML = '<p class="text-slate-500 col-span-full text-center">No projects posted yet.</p>';
             return;
         }
 
-        container.innerHTML = snapshot.docs.map(doc => {
+        container.innerHTML = docs.map(doc => {
             const project = doc.data();
+            // If we're on a specific intern's page, direct to gallery. Otherwise, use the external link.
+            const projectLink = (targetInternId && targetInternId !== 'all') ? 'gallery.html' : (project.link || '#');
+            const targetAttr = (targetInternId && targetInternId !== 'all') ? '' : 'target="_blank"';
+
             return `
-                <div class="bg-card border border-white/5 rounded-3xl overflow-hidden group hover:border-accent/40 transition-all duration-300">
+                <div class="glass-card shadow-sm rounded-3xl overflow-hidden group hover:border-[#d4af37]/50 transition-all duration-300">
                     <div class="h-full flex flex-col p-8">
                         <div class="flex justify-between items-start">
-                            <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-6">
-                                <i class="fas ${project.icon || 'fa-code'} text-accent text-xl"></i>
+                            <div class="w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center mb-6">
+                                <i class="fas ${project.icon || 'fa-code'} text-[#d4af37] text-xl"></i>
                             </div>
-                            <a href="${project.link || '#'}" target="_blank" class="text-slate-500 hover:text-white transition-colors">
+                            <a href="${projectLink}" ${targetAttr} class="text-slate-500 hover:text-slate-900 transition-colors">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
-                        <h3 class="text-xl font-bold text-white group-hover:text-accent transition-colors">${project.title}</h3>
-                        <p class="text-slate-400 mt-2 text-sm leading-relaxed">${project.description}</p>
+                        <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#d4af37] transition-colors">${project.title}</h3>
+                        <p class="text-slate-600 mt-2 text-sm leading-relaxed">${project.description}</p>
                         <div class="flex flex-wrap gap-2 mt-6">
-                            ${project.tags ? project.tags.map(tag => `<span class="text-[10px] uppercase tracking-widest font-bold text-slate-500 border border-white/5 px-2 py-1 rounded-md">${tag}</span>`).join('') : ''}
+                            ${project.tags ? project.tags.map(tag => `<span class="text-[10px] uppercase tracking-widest font-bold text-slate-500 border border-slate-200 bg-white px-2 py-1 rounded-md">${tag}</span>`).join('') : ''}
                         </div>
                     </div>
                 </div>

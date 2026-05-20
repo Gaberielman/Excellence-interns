@@ -11,25 +11,75 @@
             theme: {
                 extend: {
                     colors: {
-                        dark: '#ffffff',
-                        card: '#f9fafb',
+                        lightbg: '#f8fafc',
+                        cardbg: 'rgba(255, 255, 255, 0.7)',
+                        cardborder: 'rgba(255, 255, 255, 1)',
                         accent: '#FFD700',      // Excellence Gold from Logo
-                        accent_light: '#4ade80',
-                        text_dark: '#0f172a',
+                        accent_light: '#ffeb80',
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
                     },
                     borderRadius: { '4xl': '2rem' }
                 }
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./style.css">
+    <style>
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 215, 0, 0.2);
+            top: -100px;
+            left: -100px;
+        }
+
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 215, 0, 0.15);
+            bottom: 10%;
+            right: -50px;
+        }
+
+        .glass-card {
+            background: var(--cardbg);
+            border: 1px solid var(--cardborder);
+            backdrop-filter: blur(16px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .pulse-glow {
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .pulse-glow:hover {
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
 
-<body class="bg-white text-slate-800 font-['Plus_Jakarta_Sans'] selection:bg-accent/30 overflow-x-hidden">
-    <header class="fixed top-0 w-full z-50 backdrop-blur-md border-b border-slate-100">
+<body class="bg-lightbg text-slate-700 font-sans selection:bg-accent/30 overflow-x-hidden relative">
+
+    <!-- Background Orbs -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+
+    <header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
         <nav class="max-w-7xl mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-2">
                 <img src="assets/img/WhatsApp Image 2026-02-04 at 12.48.04 PM.png" alt="Logo"
@@ -37,67 +87,162 @@
             </div>
 
             <div class="text-slate-900 font-bold text-lg md:text-xl flex items-center gap-2">
-                <span class="text-accent">{ }</span> Excellence Web Services
+                <span class="text-[#d4af37]">{ }</span> Excellence Web Services
             </div>
             <div class="hidden lg:flex gap-8 text-sm font-medium text-slate-600">
-                <a href="#" class="hover:text-accent transition-colors">Home</a>
+                <a href="#" class="hover:text-[#d4af37] transition-colors">Home</a>
                 <a href="https://www.excellencegroupofinstitutes.com/web-services" target="_blank"
-                    class="hover:text-accent transition-colors">About Company</a>
-                <a href="#intern-showcase" class="hover:text-accent transition-colors">Our Interns</a>
+                    class="hover:text-[#d4af37] transition-colors text-[#d4af37]">Main Website</a>
+                <a href="#intern-showcase" class="hover:text-[#d4af37] transition-colors">Our Interns</a>
             </div>
             <div class="flex items-center gap-4">
                 <a href="gallery.html"
-                    class="bg-accent px-6 py-2 rounded-lg text-white font-bold text-sm hover:bg-accent_light transition-all">
+                    class="bg-accent px-6 py-2 rounded-lg text-black font-bold text-sm hover:bg-accent_light transition-all pulse-glow">
                     Our Projects
                 </a>
             </div>
         </nav>
     </header>
 
-    <section class="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
-            <div
-                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-bold mb-6">
-                <span class="relative flex h-2 w-2">
-                    <span
-                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
-                </span>
-                Now Accepting Interns
+    <style>
+        .js-anim {
+            opacity: 0;
+            transform: translateY(2rem);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .js-anim-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .arrow-path {
+            stroke-dasharray: 200;
+            stroke-dashoffset: 200;
+            transition: stroke-dashoffset 1.5s ease-in-out;
+        }
+
+        .arrow-drawn {
+            stroke-dashoffset: 0;
+        }
+    </style>
+
+    <!-- New Hero Section -->
+    <section class="relative pt-32 pb-16 overflow-hidden z-10 bg-slate-50 min-h-[90vh] flex flex-col justify-center">
+
+        <!-- Large background soft shape -->
+        <div class="absolute top-0 right-0 w-full md:w-[65%] h-[95%] bg-accent/5 rounded-bl-[200px] z-[-1]"></div>
+
+        <div class="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 w-full mt-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+
+                <!-- Left Content -->
+                <div class="w-full lg:w-1/2 flex flex-col items-start relative z-10">
+                    <p class="text-[#d4af37] font-bold tracking-widest text-sm uppercase mb-4 js-anim">Excellence in
+                        Every Pixel</p>
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.1] mb-8 js-anim">
+                        Stylish solutions <br> <span class="italic font-normal">inspired</span> by <br> Excellence
+                    </h1>
+
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-8 relative js-anim">
+                        <a href="gallery.html"
+                            class="px-8 py-4 bg-accent hover:bg-accent_light text-black font-bold rounded-full transition-all shadow-md">
+                            Browse Collection
+                        </a>
+
+                        <!-- Drawn Arrow SVG -->
+                        <div class="hidden sm:block absolute left-48 -bottom-16 w-16 h-16 text-accent">
+                            <svg class="w-full h-full stroke-current fill-none stroke-2" viewBox="0 0 100 100">
+                                <path class="arrow-path"
+                                    d="M70,10 C100,30 90,80 50,70 C30,65 30,30 50,20 C70,10 80,40 70,60 C60,75 40,75 20,80"
+                                    stroke-linecap="round" />
+                                <polyline class="arrow-path" points="30,70 20,80 30,90" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Small Glass Card (Avatars) -->
+                    <div
+                        class="mt-16 sm:ml-48 bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-[0_10px_40px_rgba(0,0,0,0.08)] flex items-center gap-4 js-anim z-20">
+                        <div class="flex -space-x-3">
+                            <img class="w-10 h-10 rounded-full border-2 border-white object-cover"
+                                src="assets/img/Anurag.jpg" alt="Avatar">
+                            <img class="w-10 h-10 rounded-full border-2 border-white object-cover"
+                                src="assets/img/Ashish.jpeg" alt="Avatar">
+                            <img class="w-10 h-10 rounded-full border-2 border-white object-cover"
+                                src="assets/img/Karen.jpeg" alt="Avatar">
+                            <div
+                                class="w-10 h-10 rounded-full border-2 border-white bg-accent text-black flex items-center justify-center font-bold text-xs">
+                                100+
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex text-[#FFD700] text-[10px] justify-between items-center mb-1">
+                                <span class="text-slate-500 font-bold">125 reviews</span>
+                                <div class="ml-2 text-[8px]">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-[10px] text-slate-500 font-medium leading-tight max-w-[150px]">Students
+                                placed successfully across top tech fields.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content (Logo) -->
+                <div class="w-full lg:w-1/2 relative js-anim opacity-0 transition-all duration-1000 ease-out"
+                    style="transform: none;">
+                    <div
+                        class="relative w-full aspect-square max-w-[400px] mx-auto lg:ml-auto flex items-center justify-center">
+                        <img src="assets/img/WhatsApp Image 2026-02-04 at 12.48.04 PM.png"
+                            class="w-full h-full object-contain drop-shadow-2xl animate-[pulse_6s_ease-in-out_infinite]"
+                            alt="Excellence Web Services Logo">
+                    </div>
+                </div>
             </div>
 
-            <h1 class="text-5xl md:text-7xl font-bold leading-tight text-slate-900 mb-6">
-                Bridge the Gap Between <br>
-                <span class="text-accent">Theory & Industry</span>
-            </h1>
-            <p class="text-slate-600 text-lg md:text-xl max-w-3xl mx-auto mb-10">
-                At Excellence Web Services, we don't just offer internships; we provide a launchpad for your career.
-                Join a global community of developers, marketers, and analysts where your code shapes real-world digital
-                solutions.
-            </p>
-
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#intern-showcase"
-                    class="px-8 py-4 bg-accent text-white font-bold rounded-xl hover:bg-accent_light transition-all shadow-lg shadow-green-200">
-                    Explore Our Intern Success
-                </a>
-                <a href="https://wa.me/918557081922"
-                    class="px-8 py-4 bg-white text-slate-900 font-bold rounded-xl border border-slate-200 hover:border-accent transition-all">
-                    Register Now
-                </a>
+            <!-- Bottom Stats/Services -->
+            <div class="mt-20 lg:mt-24 pt-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="flex items-center gap-4 js-anim">
+                    <div
+                        class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-[#b5952f] font-bold text-lg">
+                        01</div>
+                    <p class="font-bold text-slate-800 text-sm md:text-base leading-tight">Web <br> Development</p>
+                </div>
+                <div class="flex items-center gap-4 js-anim">
+                    <div
+                        class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-[#b5952f] font-bold text-lg">
+                        02</div>
+                    <p class="font-bold text-slate-800 text-sm md:text-base leading-tight">Digital <br> Marketing</p>
+                </div>
+                <div class="flex items-center gap-4 js-anim">
+                    <div
+                        class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-[#b5952f] font-bold text-lg">
+                        03</div>
+                    <p class="font-bold text-slate-800 text-sm md:text-base leading-tight">Data <br> Analysis</p>
+                </div>
+                <div class="flex items-center gap-4 js-anim">
+                    <div
+                        class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-[#b5952f] font-bold text-lg">
+                        04</div>
+                    <p class="font-bold text-slate-800 text-sm md:text-base leading-tight">Cyber <br> Security</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 relative overflow-hidden">
+    <section class="py-20 relative overflow-hidden z-10">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="bg-card border border-slate-200 rounded-4xl p-8 md:p-16 relative overflow-hidden shadow-sm">
-                <div class="absolute -top-24 -right-24 w-64 h-64 bg-accent/10 rounded-full blur-3xl"></div>
+            <div class="glass-card rounded-4xl p-8 md:p-16 relative overflow-hidden">
+                <div
+                    class="absolute -top-24 -right-24 w-64 h-64 bg-accent/20 rounded-full blur-3xl pointer-events-none">
+                </div>
 
                 <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <div
-                            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-bold mb-6">
+                            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-[#b5952f] text-sm font-bold mb-6">
                             <span class="relative flex h-2 w-2">
                                 <span
                                     class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
@@ -106,7 +251,7 @@
                             Reaching out to all Students
                         </div>
                         <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-                            Start Your <span class="text-accent">Career Journey</span> With Us
+                            Start Your <span class="text-[#d4af37]">Career Journey</span> With Us
                         </h2>
                         <p class="text-slate-600 text-lg mb-8">
                             Excellence Web Services is offering exclusive internship opportunities in high-demand
@@ -114,30 +259,38 @@
                         </p>
 
                         <div class="grid grid-cols-2 gap-4 mb-10">
-                            <div class="flex items-center gap-3 text-slate-700 font-medium">
-                                <i class="fas fa-bullhorn text-accent"></i> Digital Marketing
+                            <div
+                                class="flex items-center gap-3 text-slate-700 font-medium bg-white/60 p-3 rounded-lg border border-slate-100 shadow-sm">
+                                <i class="fas fa-bullhorn text-[#d4af37]"></i> Digital Marketing
                             </div>
-                            <div class="flex items-center gap-3 text-slate-700 font-medium">
-                                <i class="fas fa-laptop-code text-accent"></i> Website Designing
+                            <div
+                                class="flex items-center gap-3 text-slate-700 font-medium bg-white/60 p-3 rounded-lg border border-slate-100 shadow-sm">
+                                <i class="fas fa-laptop-code text-[#d4af37]"></i> Website Designing
                             </div>
-                            <div class="flex items-center gap-3 text-slate-700 font-medium">
-                                <i class="fas fa-shield-halved text-accent"></i> Cybersecurity
+                            <div
+                                class="flex items-center gap-3 text-slate-700 font-medium bg-white/60 p-3 rounded-lg border border-slate-100 shadow-sm">
+                                <i class="fas fa-shield-halved text-[#d4af37]"></i> Cybersecurity
                             </div>
-                            <div class="flex items-center gap-3 text-slate-700 font-medium">
-                                <i class="fas fa-chart-line text-accent"></i> Data Analysis
+                            <div
+                                class="flex items-center gap-3 text-slate-700 font-medium bg-white/60 p-3 rounded-lg border border-slate-100 shadow-sm">
+                                <i class="fas fa-chart-line text-[#d4af37]"></i> Data Analysis
                             </div>
                         </div>
                     </div>
 
-                    <div class="bg-white border border-slate-100 p-8 rounded-3xl shadow-xl shadow-slate-200/50">
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Application Process</h3>
-                        <p class="text-slate-500 mb-6">Registration is simple. Connect with our team today.</p>
+                    <div class="glass-card p-8 rounded-3xl relative overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent pointer-events-none">
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2 relative z-10">Application Process</h3>
+                        <p class="text-slate-500 mb-6 relative z-10">Registration is simple. Connect with our team
+                            today.</p>
 
-                        <div class="space-y-4 mb-8">
+                        <div class="space-y-4 mb-8 relative z-10">
                             <a href="https://wa.me/918557081922"
-                                class="flex items-center gap-4 p-4 rounded-2xl bg-slate-50 hover:bg-green-50 border border-transparent hover:border-green-200 transition-all group">
+                                class="flex items-center gap-4 p-4 rounded-2xl bg-white/60 hover:bg-white border border-slate-100 hover:border-green-400/50 transition-all group shadow-sm">
                                 <div
-                                    class="w-12 h-12 rounded-xl bg-green-500 flex items-center justify-center text-white text-xl">
+                                    class="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center text-green-500 text-xl border border-green-200 group-hover:bg-green-500 group-hover:text-white transition-all">
                                     <i class="fab fa-whatsapp"></i>
                                 </div>
                                 <div>
@@ -146,13 +299,14 @@
                                 </div>
                             </a>
 
-                            <div class="flex items-start gap-4 p-4">
-                                <div class="text-accent text-xl mt-1">
+                            <div
+                                class="flex items-start gap-4 p-4 rounded-2xl bg-white/60 border border-slate-100 shadow-sm">
+                                <div class="text-[#d4af37] text-xl mt-1">
                                     <i class="fas fa-map-marker-alt"></i>
                                 </div>
                                 <div>
                                     <p class="text-slate-900 font-bold">Office Location</p>
-                                    <p class="text-slate-500 text-sm leading-relaxed">
+                                    <p class="text-slate-500 text-sm leading-relaxed mt-1">
                                         SCO 44C Rajguru Nagar Market,<br>
                                         Backside MBD Mall, Ludhiana
                                     </p>
@@ -161,8 +315,8 @@
                         </div>
 
                         <a href="https://www.excellencegroupofinstitutes.com/web-services" target="_blank"
-                            class="block w-full py-4 bg-accent hover:bg-accent_light text-white text-center font-bold rounded-xl transition-all shadow-lg shadow-green-200">
-                            Visit Official Website
+                            class="block w-full py-4 bg-accent hover:bg-accent_light text-black text-center font-bold rounded-xl transition-all pulse-glow relative z-10">
+                            Visit Main Website
                         </a>
                     </div>
                 </div>
@@ -170,114 +324,215 @@
         </div>
     </section>
 
-    <section id="intern-showcase" class="py-24 bg-slate-50 relative">
+    <section id="intern-showcase" class="py-24 relative z-10">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-slate-900 text-4xl font-bold mb-12 text-center">Our Collaborative Force, Our Current Interns
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <a href="gabriel.html"
-                    class="group bg-white border border-slate-200 rounded-3xl p-6 hover:border-accent transition-all hover:-translate-y-2">
-                    <div class="aspect-square rounded-2xl bg-slate-100 mb-6 overflow-hidden">
+                    class="group glass-card rounded-3xl p-6 hover:border-[#d4af37] hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(212,175,55,0.15)]">
+                    <div
+                        class="aspect-square rounded-2xl bg-slate-100 mb-6 overflow-hidden border border-slate-200 group-hover:border-[#d4af37]/30 transition-all">
                         <img src="./assets/img/WhatsApp Image 2026-02-23 at 12.56.53 PM.jpeg" alt="Gabriel"
-                            class="w-full h-full object-cover">
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <h4 class="text-xl font-bold text-slate-900 mb-1">Gabriel</h4>
-                    <p class="text-accent text-sm font-semibold">Full-Stack Developer</p>
+                    <h4 class="text-xl font-bold text-slate-900 mb-1 group-hover:text-[#d4af37] transition-colors">
+                        Gabriel</h4>
+                    <p class="text-[#b5952f] text-sm font-semibold">Full-Stack Developer</p>
                 </a>
 
                 <a href="anurag.html"
-                    class="group bg-white border border-slate-200 rounded-3xl p-6 hover:border-accent transition-all hover:-translate-y-2">
-                    <div class="aspect-square rounded-2xl bg-slate-100 mb-6 overflow-hidden">
-                        <img src="./assets/img/Anurag.jpg" alt="Anurag" class="w-full h-full object-cover">
+                    class="group glass-card rounded-3xl p-6 hover:border-[#d4af37] hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(212,175,55,0.15)]">
+                    <div
+                        class="aspect-square rounded-2xl bg-slate-100 mb-6 overflow-hidden border border-slate-200 group-hover:border-[#d4af37]/30 transition-all">
+                        <img src="./assets/img/Anurag.jpg" alt="Anurag"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <h4 class="text-xl font-bold text-slate-900 mb-1">Anurag</h4>
-                    <p class="text-accent text-sm font-semibold">Front End Developer</p>
+                    <h4 class="text-xl font-bold text-slate-900 mb-1 group-hover:text-[#d4af37] transition-colors">
+                        Anurag</h4>
+                    <p class="text-[#b5952f] text-sm font-semibold">Front End Developer</p>
                 </a>
 
                 <a href="ashis.html"
-                    class="group bg-white border border-slate-200 rounded-3xl p-6 hover:border-accent transition-all hover:-translate-y-2">
-                    <div class="aspect-square rounded-2xl bg-slate-100 mb-6 overflow-hidden">
-                        <img src="./assets/img/Ashish.jpeg" alt="Ashis" class="w-full h-full object-cover">
+                    class="group glass-card rounded-3xl p-6 hover:border-[#d4af37] hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(212,175,55,0.15)]">
+                    <div
+                        class="aspect-square rounded-2xl bg-slate-100 mb-6 overflow-hidden border border-slate-200 group-hover:border-[#d4af37]/30 transition-all">
+                        <img src="./assets/img/Ashish.jpeg" alt="Ashis"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <h4 class="text-xl font-bold text-slate-900 mb-1">Ashis Kumar</h4>
-                    <p class="text-accent text-sm font-semibold">Back End Developer</p>
+                    <h4 class="text-xl font-bold text-slate-900 mb-1 group-hover:text-[#d4af37] transition-colors">Ashis
+                        Kumar</h4>
+                    <p class="text-[#b5952f] text-sm font-semibold">Back End Developer</p>
                 </a>
 
                 <a href="Dickens.html"
-                    class="group bg-white border border-slate-200 rounded-3xl p-6 hover:border-accent transition-all hover:-translate-y-2">
-                    <div class="aspect-square rounded-2xl bg-slate-100 mb-6 overflow-hidden">
+                    class="group glass-card rounded-3xl p-6 hover:border-[#d4af37] hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(212,175,55,0.15)]">
+                    <div
+                        class="aspect-square rounded-2xl bg-slate-100 mb-6 overflow-hidden border border-slate-200 group-hover:border-[#d4af37]/30 transition-all">
                         <img src="./assets/img/WhatsApp Image 2026-03-02 at 7.02.11 PM.jpeg" alt="Dickens"
-                            class="w-full h-full object-cover">
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <h4 class="text-xl font-bold text-slate-900 mb-1">Dickens Kapalo</h4>
-                    <p class="text-accent text-sm font-semibold">Digital Marketing</p>
+                    <h4 class="text-xl font-bold text-slate-900 mb-1 group-hover:text-[#d4af37] transition-colors">
+                        Dickens Kapalo</h4>
+                    <p class="text-[#b5952f] text-sm font-semibold">Digital Marketing</p>
                 </a>
 
                 <a href="donald.html"
-                    class="group bg-white border border-slate-200 rounded-3xl p-6 hover:border-accent transition-all hover:-translate-y-2">
-                    <div class="aspect-square rounded-2xl bg-slate-100 mb-6 overflow-hidden">
+                    class="group glass-card rounded-3xl p-6 hover:border-[#d4af37] hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(212,175,55,0.15)]">
+                    <div
+                        class="aspect-square rounded-2xl bg-slate-100 mb-6 overflow-hidden border border-slate-200 group-hover:border-[#d4af37]/30 transition-all">
                         <img src="./assets/img/WhatsApp Image 2026-03-02 at 7.06.32 PM.jpeg" alt="Donald"
-                            class="w-full h-full object-cover">
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <h4 class="text-xl font-bold text-slate-900 mb-1">Donald Chilengwe</h4>
-                    <p class="text-accent text-sm font-semibold">Web Developer</p>
+                    <h4 class="text-xl font-bold text-slate-900 mb-1 group-hover:text-[#d4af37] transition-colors">
+                        Donald Chilengwe</h4>
+                    <p class="text-[#b5952f] text-sm font-semibold">Web Developer</p>
                 </a>
 
                 <a href="karen.html"
-                    class="group bg-white border border-slate-200 rounded-3xl p-6 hover:border-accent transition-all hover:-translate-y-2">
-                    <div class="aspect-square rounded-2xl bg-slate-100 mb-6 overflow-hidden">
-                        <img src="./assets/img/Karen.jpeg" alt="Karen" class="w-full h-full object-cover">
+                    class="group glass-card rounded-3xl p-6 hover:border-[#d4af37] hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(212,175,55,0.15)]">
+                    <div
+                        class="aspect-square rounded-2xl bg-slate-100 mb-6 overflow-hidden border border-slate-200 group-hover:border-[#d4af37]/30 transition-all">
+                        <img src="./assets/img/Karen.jpeg" alt="Karen"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <h4 class="text-xl font-bold text-slate-900 mb-1">Karen Mwasha</h4>
-                    <p class="text-accent text-sm font-semibold">Data Analyst</p>
+                    <h4 class="text-xl font-bold text-slate-900 mb-1 group-hover:text-[#d4af37] transition-colors">Karen
+                        Mwasha</h4>
+                    <p class="text-[#b5952f] text-sm font-semibold">Data Analyst</p>
                 </a>
             </div>
         </div>
     </section>
 
-    <section class="py-20 bg-white">
+    <section class="py-20 relative z-10">
         <div class="max-w-4xl mx-auto px-6 text-center">
             <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-                Witness Excellence in <span class="text-[#FFD700]">Every Pixel</span>
+                Witness Excellence in <span class="text-[#d4af37]">Every Pixel</span>
             </h2>
             <p class="text-slate-600 text-lg mb-10">
                 From sleek interfaces to robust back-end architectures, our portfolio showcases the boundary-pushing
                 work our interns and experts produce daily.
             </p>
             <a href="gallery.html"
-                class="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white font-bold rounded-xl hover:bg-[#FFD700] hover:text-slate-900 transition-all shadow-xl">
-                Explore Full Gallery <i class="fas fa-arrow-right"></i>
+                class="inline-flex items-center gap-2 px-8 py-4 bg-white border border-slate-200 text-slate-900 font-bold rounded-xl hover:bg-accent hover:border-accent hover:text-black transition-all shadow-md group">
+                Explore Full Gallery <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
             </a>
         </div>
     </section>
 
-    <footer class="py-12 bg-slate-50 border-t border-slate-100 text-center">
+    <section class="py-20 relative z-10">
+        <div class="max-w-4xl mx-auto px-6">
+            <div
+                class="glass-card bg-white border border-slate-200 rounded-4xl p-8 md:p-12 shadow-xl relative overflow-hidden">
+                <div
+                    class="absolute -top-24 -right-24 w-64 h-64 bg-accent/20 rounded-full blur-3xl pointer-events-none">
+                </div>
+                <div class="text-center mb-10 relative z-10">
+                    <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-4">
+                        Ready to <span class="text-[#d4af37]">Join Us?</span>
+                    </h2>
+                    <p class="text-slate-600">Fill out the form below and start your journey.</p>
+                </div>
+
+                <form id="contact-form" class="space-y-6 relative z-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Full Name</label>
+                            <input id="field-name" type="text"
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#d4af37] focus:ring-1 focus:ring-[#d4af37] transition-all"
+                                placeholder="Name:" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
+                            <input id="field-email" type="email"
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#d4af37] focus:ring-1 focus:ring-[#d4af37] transition-all"
+                                placeholder="@gmail.com" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Phone Number</label>
+                        <input id="field-phone" type="tel"
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#d4af37] focus:ring-1 focus:ring-[#d4af37] transition-all"
+                            placeholder="+91 99999 99999" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Area of Interest</label>
+                        <select id="field-interest"
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-[#d4af37] focus:ring-1 focus:ring-[#d4af37] transition-all [&>option]:bg-white"
+                            required>
+                            <option value="">Select a field</option>
+                            <option value="Web Development">Web Development</option>
+                            <option value="Web Design">Web Design</option>
+                            <option value="Digital Marketing">Digital Marketing</option>
+                            <option value="Data Analysis">Data Analysis</option>
+                        </select>
+                    </div>
+                    <button id="submit-btn" type="submit"
+                        class="w-full py-4 bg-accent hover:bg-accent_light text-black font-bold rounded-xl transition-all pulse-glow mt-8">
+                        Submit Registration
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-slate-200 text-center relative z-10 bg-white">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-slate-900 font-bold text-xl mb-8">
-                Excellence Web Services
+            <div class="text-slate-900 font-bold text-xl mb-8 flex items-center justify-center gap-2">
+                <span class="text-[#d4af37]">{ }</span> Excellence Web Services
             </div>
 
             <div class="flex flex-wrap justify-center gap-8 mb-8 text-sm font-medium text-slate-600">
                 <a href="https://www.instagram.com/excellence_web_services/"
-                    class="hover:text-[#FFD700] transition-colors">
+                    class="hover:text-[#d4af37] transition-colors">
                     <i class="fab fa-instagram mr-2"></i>Instagram
                 </a>
-                <a href="https://www.excellencegroupofinstitutes.com/web-services"
-                    class="hover:text-[#FFD700] transition-colors">
-                    <i class="fas fa-globe mr-2"></i>Official Website
+                <a href="https://www.excellencegroupofinstitutes.com/web-services" target="_blank"
+                    class="hover:text-[#d4af37] transition-colors">
+                    <i class="fas fa-globe mr-2"></i>Main Website
                 </a>
-                <a href="admin.html" class="hover:text-[#FFD700] transition-colors">
+                <a href="admin.html" class="hover:text-[#d4af37] transition-colors">
                     <i class="fas fa-user-shield mr-2"></i>Admin Login
                 </a>
             </div>
 
-            <p class="text-slate-400 text-sm">
+            <p class="text-slate-500 text-sm">
                 &copy; 2026 Excellence Web Services. All rights reserved.
             </p>
         </div>
     </footer>
 
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- EmailJS handler -->
+    <script src="js/email.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Staggered fade-in and slide-up for left side elements and bottom stats
+            const animatedElements = document.querySelectorAll('.js-anim');
+            animatedElements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.add('js-anim-visible');
+                }, 150 * index + 100);
+            });
+
+            // Fade in right side image
+            setTimeout(() => {
+                const rightImg = document.querySelector('.lg\\:w-1\\/2.relative.js-anim');
+                if (rightImg) rightImg.style.opacity = '1';
+            }, 600);
+
+            // Draw the arrow SVG path
+            setTimeout(() => {
+                const arrowPaths = document.querySelectorAll('.arrow-path');
+                arrowPaths.forEach(path => {
+                    path.classList.add('arrow-drawn');
+                });
+            }, 1200);
+        });
+    </script>
 </body>
 
 </html>
