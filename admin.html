@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +14,7 @@
                         lightbg: '#f8fafc',
                         cardbg: 'rgba(255, 255, 255, 0.7)',
                         cardborder: 'rgba(255, 255, 255, 1)',
-                        accent: '#FFD700',      
+                        accent: '#FFD700',
                         accent_light: '#ffeb80',
                     },
                     fontFamily: {
@@ -25,9 +26,13 @@
         }
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <style>
-        .hidden { display: none; }
+        .hidden {
+            display: none;
+        }
+
         .glow-orb {
             position: absolute;
             border-radius: 50%;
@@ -36,8 +41,23 @@
             opacity: 0.6;
             pointer-events: none;
         }
-        .orb-1 { width: 400px; height: 400px; background: rgba(255, 215, 0, 0.2); top: -100px; left: -100px; }
-        .orb-2 { width: 300px; height: 300px; background: rgba(255, 215, 0, 0.15); bottom: 10%; right: -50px; }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 215, 0, 0.2);
+            top: -100px;
+            left: -100px;
+        }
+
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 215, 0, 0.15);
+            bottom: 10%;
+            right: -50px;
+        }
+
         .glass-card {
             background: var(--cardbg);
             border: 1px solid var(--cardborder);
@@ -46,6 +66,7 @@
         }
     </style>
 </head>
+
 <body class="bg-lightbg text-slate-700 font-sans min-h-screen relative overflow-x-hidden p-6 md:p-12">
     <!-- Background Orbs -->
     <div class="glow-orb orb-1"></div>
@@ -57,17 +78,23 @@
             <div class="w-16 h-16 bg-slate-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <i class="fas fa-lock text-2xl text-[#d4af37]"></i>
             </div>
-            <h2 class="text-3xl font-bold text-slate-900 mb-2">Admin Access</h2>
+            <h2 class="text-3xl font-bold text-slate-900 mb-2">Intern Access</h2>
             <p class="text-slate-500 mb-8">Sign in to manage portfolio projects</p>
             <form id="login-form" class="space-y-5">
-                <input type="text" id="email" placeholder="Username" class="w-full bg-white border border-slate-200 p-4 rounded-xl text-slate-900 focus:border-[#d4af37] focus:ring-1 focus:ring-[#d4af37] outline-none transition-all" required>
-                <input type="password" id="password" placeholder="Password" class="w-full bg-white border border-slate-200 p-4 rounded-xl text-slate-900 focus:border-[#d4af37] focus:ring-1 focus:ring-[#d4af37] outline-none transition-all" required>
-                <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 rounded-xl transition-all shadow-md mt-4">
+                <input type="text" id="email" placeholder="Username"
+                    class="w-full bg-white border border-slate-200 p-4 rounded-xl text-slate-900 focus:border-[#d4af37] focus:ring-1 focus:ring-[#d4af37] outline-none transition-all"
+                    required>
+                <input type="password" id="password" placeholder="Password"
+                    class="w-full bg-white border border-slate-200 p-4 rounded-xl text-slate-900 focus:border-[#d4af37] focus:ring-1 focus:ring-[#d4af37] outline-none transition-all"
+                    required>
+                <button type="submit"
+                    class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 rounded-xl transition-all shadow-md mt-4">
                     Enter Dashboard <i class="fas fa-arrow-right ml-2"></i>
                 </button>
             </form>
             <div class="mt-6">
-                <a href="index.html" class="inline-flex items-center text-sm text-slate-500 hover:text-[#d4af37] transition-all font-medium">
+                <a href="index.html"
+                    class="inline-flex items-center text-sm text-slate-500 hover:text-[#d4af37] transition-all font-medium">
                     <i class="fas fa-arrow-left mr-2"></i> Back to Home
                 </a>
             </div>
@@ -75,16 +102,18 @@
 
         <!-- Dashboard Section -->
         <div id="dashboard-section" class="hidden space-y-8">
-            <div class="flex flex-col md:flex-row justify-between items-center bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
+            <div
+                class="flex flex-col md:flex-row justify-between items-center bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
                 <div>
                     <h2 class="text-2xl font-bold text-slate-900">Post New Project</h2>
                     <p class="text-sm text-slate-500 mt-1">Publish work directly to the live gallery</p>
                 </div>
-                <button id="logout-btn" class="mt-4 md:mt-0 px-6 py-2 border border-slate-200 rounded-lg text-sm text-slate-600 hover:text-red-500 hover:border-red-200 transition-all font-medium">
+                <button id="logout-btn"
+                    class="mt-4 md:mt-0 px-6 py-2 border border-slate-200 rounded-lg text-sm text-slate-600 hover:text-red-500 hover:border-red-200 transition-all font-medium">
                     <i class="fas fa-sign-out-alt mr-2"></i> Sign Out
                 </button>
             </div>
-            
+
             <!-- Post Project Form -->
             <form id="project-form" class="glass-card p-8 rounded-3xl space-y-5 shadow-sm">
                 <div class="mb-6 border-b border-slate-200 pb-4">
@@ -92,7 +121,8 @@
                 </div>
                 <div>
                     <label class="block text-sm font-bold text-slate-700 mb-2">Assign To Intern</label>
-                    <select id="internId" class="w-full bg-white border border-slate-200 p-4 rounded-xl text-slate-900 focus:border-[#d4af37] focus:ring-1 focus:ring-[#d4af37] outline-none transition-all">
+                    <select id="internId"
+                        class="w-full bg-white border border-slate-200 p-4 rounded-xl text-slate-900 focus:border-[#d4af37] focus:ring-1 focus:ring-[#d4af37] outline-none transition-all">
                         <option value="all">General / All Interns (Gallery Only)</option>
                         <option value="gabriel">Gabriel Manhanga</option>
                         <option value="anurag">Anurag</option>
@@ -102,67 +132,44 @@
                         <option value="karen">Karen Mwasha</option>
                     </select>
                 </div>
-                
+
                 <div>
                     <label class="block text-sm font-bold text-slate-700 mb-2">Project Title</label>
-                    <input type="text" id="title" placeholder="e.g. E-Commerce Platform" class="w-full bg-white border border-slate-200 p-4 rounded-xl text-slate-900 focus:border-[#d4af37] outline-none transition-all" required>
+                    <input type="text" id="title" placeholder="e.g. E-Commerce Platform"
+                        class="w-full bg-white border border-slate-200 p-4 rounded-xl text-slate-900 focus:border-[#d4af37] outline-none transition-all"
+                        required>
                 </div>
 
                 <div>
                     <label class="block text-sm font-bold text-slate-700 mb-2">Description</label>
-                    <textarea id="description" placeholder="Short description of the project..." class="w-full bg-white border border-slate-200 p-4 rounded-xl text-slate-900 focus:border-[#d4af37] outline-none h-32 resize-none transition-all" required></textarea>
+                    <textarea id="description" placeholder="Short description of the project..."
+                        class="w-full bg-white border border-slate-200 p-4 rounded-xl text-slate-900 focus:border-[#d4af37] outline-none h-32 resize-none transition-all"
+                        required></textarea>
                 </div>
 
                 <div>
                     <label class="block text-sm font-bold text-slate-700 mb-2">Project Link</label>
-                    <input type="url" id="link" placeholder="https://..." class="w-full bg-white border border-slate-200 p-4 rounded-xl text-slate-900 focus:border-[#d4af37] outline-none transition-all">
+                    <input type="url" id="link" placeholder="https://..."
+                        class="w-full bg-white border border-slate-200 p-4 rounded-xl text-slate-900 focus:border-[#d4af37] outline-none transition-all">
                 </div>
 
                 <div>
                     <label class="block text-sm font-bold text-slate-700 mb-2">Tags</label>
-                    <input type="text" id="tags" placeholder="e.g. React, Tailwind, Firebase (comma separated)" class="w-full bg-white border border-slate-200 p-4 rounded-xl text-slate-900 focus:border-[#d4af37] outline-none transition-all">
+                    <input type="text" id="tags" placeholder="e.g. React, Tailwind, Firebase (comma separated)"
+                        class="w-full bg-white border border-slate-200 p-4 rounded-xl text-slate-900 focus:border-[#d4af37] outline-none transition-all">
                 </div>
 
-                <button type="submit" class="w-full bg-[#d4af37] hover:bg-[#b5952f] text-white font-bold py-4 rounded-xl transition-all shadow-md mt-4">
+                <button type="submit"
+                    class="w-full bg-[#d4af37] hover:bg-[#b5952f] text-white font-bold py-4 rounded-xl transition-all shadow-md mt-4">
                     <i class="fas fa-cloud-upload-alt mr-2"></i> Publish Project
                 </button>
             </form>
 
-            <!-- Add Intern Form -->
-            <form id="intern-form" class="glass-card p-8 rounded-3xl space-y-5 shadow-sm mt-8">
-                <div class="mb-6 border-b border-slate-200 pb-4">
-                    <h3 class="text-xl font-bold text-slate-900">Add New Intern</h3>
-                </div>
-                
-                <div>
-                    <label class="block text-sm font-bold text-slate-700 mb-2">Intern Name</label>
-                    <input type="text" id="intern-name" placeholder="e.g. Jane Doe" class="w-full bg-white border border-slate-200 p-4 rounded-xl text-slate-900 focus:border-[#d4af37] outline-none transition-all" required>
-                </div>
-
-                <div>
-                    <label class="block text-sm font-bold text-slate-700 mb-2">Role</label>
-                    <input type="text" id="intern-role" placeholder="e.g. UI/UX Designer" class="w-full bg-white border border-slate-200 p-4 rounded-xl text-slate-900 focus:border-[#d4af37] outline-none transition-all" required>
-                </div>
-
-                <div>
-                    <label class="block text-sm font-bold text-slate-700 mb-2">Portfolio Page URL</label>
-                    <input type="text" id="intern-link" placeholder="e.g. jane.html" class="w-full bg-white border border-slate-200 p-4 rounded-xl text-slate-900 focus:border-[#d4af37] outline-none transition-all" required>
-                </div>
-
-                <div>
-                    <label class="block text-sm font-bold text-slate-700 mb-2">Image URL (from assets)</label>
-                    <input type="text" id="intern-image" placeholder="e.g. ./assets/img/Jane.jpg" class="w-full bg-white border border-slate-200 p-4 rounded-xl text-slate-900 focus:border-[#d4af37] outline-none transition-all" required>
-                </div>
-
-                <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 rounded-xl transition-all shadow-md mt-4">
-                    <i class="fas fa-user-plus mr-2"></i> Add Intern to Main Website
-                </button>
-            </form>
         </div>
     </div>
-    
+
     <script>
-        document.getElementById('login-form').addEventListener('submit', function(e) {
+        document.getElementById('login-form').addEventListener('submit', function (e) {
             e.preventDefault();
             var username = document.getElementById('email').value.trim();
             var password = document.getElementById('password').value;
@@ -192,4 +199,5 @@
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
     <script src="./js/admin.js?v=4"></script>
 </body>
+
 </html>
